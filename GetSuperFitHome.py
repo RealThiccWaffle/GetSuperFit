@@ -166,7 +166,7 @@ def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
     elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
         AdvChoice = AdvChoice + "Advanced"
         TypeOfChoice2 = TypeOfChoice2 + "Advanced"
-        st.write("Advanced is for those who want a good pump!)
+        st.write("Advanced is for those who want a good pump!")
     else:
         st.write("please select only one option")
     return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
