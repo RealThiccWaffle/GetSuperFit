@@ -249,14 +249,14 @@ if typeOfEx != "Home":
     HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
     BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
     if BegChoice == "yesBeginner":
-         numOfSet1 = 2
-         numOfSet2 = 2
+        numOfSet1 = 2
+        numOfSet2 = 2
     if interChoice == "yesIntermediate":
-         numOfSet1 = 3
-         numOfSet2 = 3
+        numOfSet1 = 3
+        numOfSet2 = 3
     if advChoice == "yesAdvanced":
-         numOfSet1 = 4
-         numOfSet2 = 4
+        numOfSet1 = 4
+        numOfSet2 = 4
     resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
     #-------------------------------------------------chest Hyper
     if resultOfChoices == "chest_Hpypertrophy_Beginner":
