@@ -126,6 +126,7 @@ core_Endurance_Intermediate2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
 #-----------------SideBar---------------------------------------
+user_name = "no"
 with st.sidebar:
     selected = option_menu(
         menu_title= "Main Menu",
@@ -159,7 +160,6 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = ""
 if typeOfEx == "Home":
-    st.write(user_name)
     """
     #    WELCOME TO THE GET SUPER FIT APP
     #  Use this app to help you get fit!
@@ -168,6 +168,7 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
+    st.write(user_name)
 if typeOfEx != "Home":
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
         ex1, ex2, ex3 = st.columns(3)
