@@ -137,10 +137,14 @@ with st.sidebar:
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        while user_name == "no":
+        if user_name == "no":
             user_name_input = st.sidebar.text_input("Username")
             if st.sidebar.button("Login"):
                 user_name = user_name_input
+                x = user_name
+                if x == user_name:
+                    x = "welcome back " + user_name
+                    user_name_input = x
         while user_name != "no":
             if st.sidebar.button("Logout"):
                 user_name = "no"
