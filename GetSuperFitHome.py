@@ -149,7 +149,7 @@ with st.sidebar:
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        userLogin()
+        st.write(userLogin())
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
