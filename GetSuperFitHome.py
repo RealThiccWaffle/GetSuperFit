@@ -132,48 +132,113 @@ with st.sidebar:
         menu_title= "Main Menu",
         options= ["Home", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"]
     )
-    def userLogin(user_login_True):
-        if user_name == "no":
-            user_name_input = st.sidebar.text_input("Username")
-            user_password_input = st.sidebar.text_input("Password")
-            if st.sidebar.button("Login"):
-                user_name = user_name_input
-                user_login_True = True
-        if user_name != "no":
-            if st.sidebar.button("Logout"):
-                user_name = "no"
-                user_login_True = False
-        return user_login_True
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        st.write(userLogin())
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "Back/Shoulder Day":
         st.title("Lets build a back/shoulder workout")
         typeOfEx = "back_shoulder"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "Leg Day":
         st.title("Lets build a leg workout")
         typeOfEx = "leg"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "Arm Day":
         st.title("Lets build a arm workout")
         typeOfEx = "arm"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "Core Day":
         st.title("Lets build a core workout")
         typeOfEx = "core"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-        userLogin()
+        def userLogin(user_login_True):
+            if user_name == "no":
+                user_name_input = st.sidebar.text_input("Username")
+                user_password_input = st.sidebar.text_input("Password")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+                user_login_True = True
+            if user_name != "no":
+                if st.sidebar.button("Logout"):
+                    user_name = "no"
+                    user_login_True = False
+            return user_login_True
 if typeOfEx == "My Data":
     user_login_True = False
     user_login_True = userLogin(user_login_True)
