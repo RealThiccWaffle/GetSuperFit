@@ -142,121 +142,121 @@ if typeOfEx == "Home":
 if typeOfEx != "" or typeOfEX != "Home":
 #---------------1st Parameter Function----------------
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
-    ex1, ex2, ex3 = st.columns(3)
-    xNum1str = "not"
-    xNum2str = "not"
-    xNum3str = "not"
-    xNum4str = ""
-    xNum5str = ""
-    xNum6str = ""
-    with ex1:
-        if button("Hpypertrophy", key = "Hpypertrophy") == False:
-            xNum4str = xNum1str + " Hpypertrophy" 
-    with ex2:
-        if button("Strength", key = "Strength") == False:
-            xNum5str = xNum2str + " Strength"
-    with ex3:
-        if button("Endurance", key = "Endurance") == False:
-            xNum6str = xNum3str + " Endurance"
+        ex1, ex2, ex3 = st.columns(3)
+        xNum1str = "not"
+        xNum2str = "not"
+        xNum3str = "not"
+        xNum4str = ""
+        xNum5str = ""
+        xNum6str = ""
+        with ex1:
+            if button("Hpypertrophy", key = "Hpypertrophy") == False:
+                xNum4str = xNum1str + " Hpypertrophy" 
+        with ex2:
+            if button("Strength", key = "Strength") == False:
+                xNum5str = xNum2str + " Strength"
+        with ex3:
+            if button("Endurance", key = "Endurance") == False:
+                xNum6str = xNum3str + " Endurance"
 
 
-    if xNum4str != "not Hpypertrophy" and xNum5str == "not Strength" and xNum6str == "not Endurance":
-        HyperChoice = HyperChoice + " Hypertrophy"
-        TypeOfChoice1 = TypeOfChoice1 + "Hpypertrophy"
-        st.write("Hypertrophy is if your goal is to gain muscle mass")
-    elif xNum5str != "not Strength" and xNum4str == "not Hpypertrophy" and xNum6str == "not Endurance":
-        StrenChoice = StrenChoice + "strength"
-        TypeOfChoice1 = TypeOfChoice1 + "Strength"
-        st.write("Strength is for those you want to get stronger with current muscle mass they have")
-    elif xNum6str != "not Endurance" and xNum4str == "not Hpypertrophy" and xNum5str == "not Strength":
-        EndurChoice = EndurChoice + "Endurance"
-        TypeOfChoice1 = TypeOfChoice1 + "Endurance"
-        st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps") 
-    else:
-        st.write("please select only one option")
-    return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
+        if xNum4str != "not Hpypertrophy" and xNum5str == "not Strength" and xNum6str == "not Endurance":
+            HyperChoice = HyperChoice + " Hypertrophy"
+            TypeOfChoice1 = TypeOfChoice1 + "Hpypertrophy"
+            st.write("Hypertrophy is if your goal is to gain muscle mass")
+        elif xNum5str != "not Strength" and xNum4str == "not Hpypertrophy" and xNum6str == "not Endurance":
+            StrenChoice = StrenChoice + "strength"
+            TypeOfChoice1 = TypeOfChoice1 + "Strength"
+            st.write("Strength is for those you want to get stronger with current muscle mass they have")
+        elif xNum6str != "not Endurance" and xNum4str == "not Hpypertrophy" and xNum5str == "not Strength":
+            EndurChoice = EndurChoice + "Endurance"
+            TypeOfChoice1 = TypeOfChoice1 + "Endurance"
+            st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps") 
+        else:
+            st.write("please select only one option")
+        return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
 
 
 #---------------2nd Parameter Function----------------
-def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
-    ex1, ex2, ex3 = st.columns(3)
-    xNum1str = "not"
-    xNum2str = "not"
-    xNum3str = "not"
-    xNum4str = ""
-    xNum5str = ""
-    xNum6str = ""
-    with ex1:
-        if button("Beginnrer", key = "Beginner") == False:
-            xNum4str = xNum1str + " Beginner"
-    with ex2:
-        if button("Intermediate", key = "Intermediate") == False:
-            xNum5str = xNum2str + " Intermediate"
-    with ex3:
-        if button("Advanced", key = "Advanced") == False:
-            xNum6str = xNum3str + " Advanced"
+    def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
+        ex1, ex2, ex3 = st.columns(3)
+        xNum1str = "not"
+        xNum2str = "not"
+        xNum3str = "not"
+        xNum4str = ""
+        xNum5str = ""
+        xNum6str = ""
+        with ex1:
+            if button("Beginnrer", key = "Beginner") == False:
+                xNum4str = xNum1str + " Beginner"
+        with ex2:
+            if button("Intermediate", key = "Intermediate") == False:
+                xNum5str = xNum2str + " Intermediate"
+        with ex3:
+            if button("Advanced", key = "Advanced") == False:
+                xNum6str = xNum3str + " Advanced"
 
 
-    if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
-        BegChoice = BegChoice + "Beginner"
-        TypeOfChoice2 = TypeOfChoice2 + "Beginner"
-        st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
-    elif xNum5str != "not Intermediate" and xNum4str == "not Beginner" and xNum6str == "not Advanced":
-        InterChoice = InterChoice + "Intermediate"
-        TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
-        st.write("Intermediate is perfect if you need to up it from beginner!")
-    elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
-        AdvChoice = AdvChoice + "Advanced"
-        TypeOfChoice2 = TypeOfChoice2 + "Advanced"
-        st.write("Advanced is for those who want a good pump!")
-    else:
-        st.write("please select only one option")
-    return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
+        if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
+            BegChoice = BegChoice + "Beginner"
+            TypeOfChoice2 = TypeOfChoice2 + "Beginner"
+            st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
+        elif xNum5str != "not Intermediate" and xNum4str == "not Beginner" and xNum6str == "not Advanced":
+            InterChoice = InterChoice + "Intermediate"
+            TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
+            st.write("Intermediate is perfect if you need to up it from beginner!")
+        elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
+            AdvChoice = AdvChoice + "Advanced"
+            TypeOfChoice2 = TypeOfChoice2 + "Advanced"
+            st.write("Advanced is for those who want a good pump!")
+        else:
+            st.write("please select only one option")
+        return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
 #----------------type of workout Function----------------------
-def resultsOfButtons(type1, type2, type3, type4):
-    type4 = type1 + type2 + type3
-    return type4
+    def resultsOfButtons(type1, type2, type3, type4):
+        type4 = type1 + type2 + type3
+        return type4
 #----------------workoutGenerator Function---------------------
-def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
-    if numOfset == 2:
-        ex1, ex2 = random.sample(workout_Type, numOfset)
-    if numOfset == 3:
-        ex1, ex2, ex3 = random.sample(workout_Type, numOfset)
-    if numOfset == 4:
-        ex1, ex2, ex3, ex4 = random.sample(workout_Type, numOfset)
-    return ex1, ex2, ex3, ex4
+    def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
+        if numOfset == 2:
+            ex1, ex2 = random.sample(workout_Type, numOfset)
+        if numOfset == 3:
+            ex1, ex2, ex3 = random.sample(workout_Type, numOfset)
+        if numOfset == 4:
+            ex1, ex2, ex3, ex4 = random.sample(workout_Type, numOfset)
+        return ex1, ex2, ex3, ex4
 #----------------workoutGenerator2 function---------------------
-def workoutGenerator2(finalResults, NumOfset3):
-        num1 = ("")
-        num2 = ("")
-        num3 = ("")
-        num4 = ("")
-        num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
-        st.write("")
-        if num1 != "":
-            st.write(num1)
-        if num2 != "":
-            st.write(num2)
-        if num3 != "":
-            st.write(num3)
-        if num4 != "":
-            st.write(num4)
-    choice1 = "yes"
-    choice2 = "yes"
-    choice3 = "yes"
-    choice4 = "_"
-    HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
-    BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
-    if BegChoice == "yesBeginner":
-        numOfSet1 = 2
-        numOfSet2 = 2
-    if interChoice == "yesIntermediate":
-        numOfSet1 = 3
-        numOfSet2 = 3
-    if advChoice == "yesAdvanced":
-        numOfSet1 = 4
-        numOfSet2 = 4
-    resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
+    def workoutGenerator2(finalResults, NumOfset3):
+            num1 = ("")
+            num2 = ("")
+            num3 = ("")
+            num4 = ("")
+            num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
+            t.write("")
+            if num1 != "":
+                st.write(num1)
+            if num2 != "":
+                st.write(num2)
+            if num3 != "":
+                st.write(num3)
+            if num4 != "":
+                st.write(num4)
+        choice1 = "yes"
+        choice2 = "yes"
+        choice3 = "yes"
+        choice4 = "_"
+        HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
+        BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
+        if BegChoice == "yesBeginner":
+            numOfSet1 = 2
+            numOfSet2 = 2
+        if interChoice == "yesIntermediate":
+            numOfSet1 = 3
+            numOfSet2 = 3
+        if advChoice == "yesAdvanced":
+            numOfSet1 = 4
+            numOfSet2 = 4
+        resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
     #-------------------------------------------------chest Hyper
     if resultOfChoices == "chest_Hpypertrophy_Beginner":
         workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
