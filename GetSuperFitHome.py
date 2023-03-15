@@ -137,7 +137,7 @@ with st.sidebar:
         typeOfEx = "Home"
         st.title("Welcome to the home page")
         st.subheader("login")
-        user_name_input = st.text.input("Username")
+        user_name_input = st.text_input("Username")
         if button("Login"):
             user_name = user_name_input
     if selected == "Chest Day":
