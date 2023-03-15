@@ -212,7 +212,7 @@ with st.sidebar:
     resultOfChoices = ""
     if selected == "Home":
         st.title("Welcome to the home page")
-        typeOfEx = ""
+        typeOfEx = "Home"
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
@@ -231,6 +231,15 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = ""
+if typeOfEx == "Home":
+    """
+    #    WELCOME TO THE GET SUPER FIT APP
+    #  Use this app to help you get fit!
+    
+    # About the App
+    This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
+    If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
+    """
 if typeOfEx != "":
     choice1 = "yes"
     choice2 = "yes"
