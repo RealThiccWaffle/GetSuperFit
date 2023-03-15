@@ -21,11 +21,8 @@ def workoutGenerator2(finalResults, NumOfset3):
             num3 = ""
             num4 = ""
             num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
-            
-            If NumOfset3 == 2:
-                st.write(num1)
-                st.write(num2)
-                st.write(num3)
+            st.write(num1)
+            st.write(num2)
             #st.write(num3)
             #st.write(num4)
 def resultsOfButtons(type1, type2, type3, type4):
