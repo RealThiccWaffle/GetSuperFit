@@ -174,6 +174,7 @@ if typeOfEx == "My Data":
         st.write("This is your Data")
     else:
         st.write("You need to have a account and login to see your data")
+        st.write(user_name)
     
 if typeOfEx == "Home":
     """
