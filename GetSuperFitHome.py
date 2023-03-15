@@ -5,6 +5,29 @@ from streamlit_extras.stateful_button import button
 import random
 import pandas as pd
 
+#----------------workoutGenerator Function---------------------
+def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
+    a = numOfset
+    if a == 2:
+        ex1, ex2 = random.sample(workout_Type, 2)
+    if a == 3:
+        ex1, ex2, ex3 = random.sample(workout_Type, 3)
+    elif a == 4:
+        ex1, ex2, ex3, ex4 = random.sample(workout_Type, 4)
+    return ex1, ex2, ex3, ex4
+def workoutGenerator2(finalResults, NumOfset3):
+            num1 = ""
+            num2 = ""
+            num3 = ""
+            num4 = ""
+            num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
+            st.write(num1)
+            st.write(num2)
+            st.write(num3)
+            st.write(num4)
+def resultsOfButtons(type1, type2, type3, type4):
+            type4 = type1 + type2 + type3
+            return type4
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -211,43 +234,14 @@ if typeOfEx != "Home":
         else:
             st.write("please select only one option")
         return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
-#----------------type of workout Function----------------------
-    def resultsOfButtons(type1, type2, type3, type4):
-        type4 = type1 + type2 + type3
-        return type4
-#----------------workoutGenerator Function---------------------
-    def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
-        if numOfset == 2:
-            ex1, ex2 = random.sample(workout_Type, numOfset)
-        if numOfset == 3:
-            ex1, ex2, ex3 = random.sample(workout_Type, numOfset)
-        if numOfset == 4:
-            ex1, ex2, ex3, ex4 = random.sample(workout_Type, numOfset)
-        return ex1, ex2, ex3, ex4
-#----------------workoutGenerator2 function---------------------
-    def workoutGenerator2(finalResults, NumOfset3):
-            num1 = ("")
-            num2 = ("")
-            num3 = ("")
-            num4 = ("")
-            num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
-            st.write("")
-            if num1 != "":
-                st.write(num1)
-            elif num2 != "":
-                st.write(num2)
-            elif num3 != "":
-                st.write(num3)
-            elif num4 != "":
-                st.write(num4)
-            else:
-                abcd = 0
     choice1 = "yes"
     choice2 = "yes"
     choice3 = "yes"
     choice4 = "_"
     HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
     BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
+    numOfSet1 = 0
+    numOfSet2 = 0
     if BegChoice == "yesBeginner":
         numOfSet1 = 2
         numOfSet2 = 2
@@ -258,9 +252,13 @@ if typeOfEx != "Home":
         numOfSet1 = 4
         numOfSet2 = 4
     resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
-    #-------------------------------------------------chest Hyper
+    
+        #-------------------------------------------------chest Hyper
+if typeOfEx != "Home" and numOfSet1 != 0:
     if resultOfChoices == "chest_Hpypertrophy_Beginner":
+        st.write("Main lifts")
         workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
+        st.write("Secondary lifts")
         workoutGenerator2(chest_Hpypertrophy_Beginner2, numOfSet2)
     if resultOfChoices == "chest_Hpypertrophy_Intermediate":
         workoutGenerator2(chest_Hpypertrophy_Intermediate, numOfSet1)
@@ -268,7 +266,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "chest_Hpypertrophy_Advanced":
         workoutGenerator2(chest_Hpypertrophy_Advanced, numOfSet1)
         workoutGenerator2(chest_Hpypertrophy_Advanced2, numOfSet2)
-    #-------------------------------------------------chest Strength
+        #-------------------------------------------------chest Strength
     if resultOfChoices == "chest_Strength_Beginner":
         workoutGenerator2(chest_Strength_Beginner, numOfSet1)
         workoutGenerator2(chest_Strength_Beginner2, numOfSet2)
@@ -278,7 +276,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "chest_Strength_Advanced":
         workoutGenerator2(chest_Strength_Advanced, numOfSet1)
         workoutGenerator2(chest_Strength_Advanced2, numOfSet2)
-    #-------------------------------------------------chest Ender
+        #-------------------------------------------------chest Ender
     if resultOfChoices == "chest_Endurance_Beginner":
         workoutGenerator2(chest_Endurance_Beginner, numOfSet1)
         workoutGenerator2(chest_Endurance_Beginner2, numOfSet2)
@@ -288,12 +286,12 @@ if typeOfEx != "Home":
     if resultOfChoices == "chest_Endurance_Advanced":
         workoutGenerator2(chest_Endurance_Advanced, numOfSet1)
         workoutGenerator2(chest_Endurance_Advanced2, numOfSet2)
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
-    #-------------------------------------------------back/shoulder Hyper
+        #####################################################################
+        #-------------------------------------------------back/shoulder Hyper
     if resultOfChoices == "back_shoulder_Hpypertrophy_Beginner":
         workoutGenerator2(back_shoulder_Hpypertrophy_Beginner, numOfSet1)
         workoutGenerator2(back_shoulder_Hpypertrophy_Beginner2, numOfSet2)
@@ -303,7 +301,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "back_shoulder_Hpypertrophy_Advanced":
         workoutGenerator2(back_shoulder_Hpypertrophy_Advanced, numOfSet1)
         workoutGenerator2(back_shoulder_Hpypertrophy_Advanced2, numOfSet2)
-    #-------------------------------------------------back/shoulder Strength
+        #-------------------------------------------------back/shoulder Strength
     if resultOfChoices == "back_shoulder_Strength_Beginner":
         workoutGenerator2(back_shoulder_Strength_Beginner, numOfSet1)
         workoutGenerator2(back_shoulder_Strength_Beginner2, numOfSet2)
@@ -313,7 +311,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "back_shoulder_Strength_Advanced":
         workoutGenerator2(back_shoulder_Strength_Advanced, numOfSet1)
         workoutGenerator2(back_shoulder_Strength_Advanced2, numOfSet2)
-    #-------------------------------------------------back/shoulder Ender 
+        #-------------------------------------------------back/shoulder Ender 
     if resultOfChoices == "back_shoulder_Endurance_Beginner":
         workoutGenerator2(back_shoulder_Endurance_Beginner, numOfSet1)
         workoutGenerator2(back_shoulder_Endurance_Beginner2, numOfSet2)
@@ -323,12 +321,12 @@ if typeOfEx != "Home":
     if resultOfChoices == "back_shoulder_Endurance_Advanced":
         workoutGenerator2(back_shoulder_Endurance_Advanced, numOfSet1)
         workoutGenerator2(back_shoulder_Endurance_Advanced2, numOfSet2)
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
-    #-------------------------------------------------leg Hyper
+        #####################################################################
+        #-------------------------------------------------leg Hyper
     if resultOfChoices == "leg_Hpypertrophy_Beginner":
         workoutGenerator2(leg_Hpypertrophy_Beginner, numOfSet1)
         workoutGenerator2(leg_Hpypertrophy_Beginner2, numOfSet2)
@@ -338,7 +336,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "leg_Hpypertrophy_Advanced":
         workoutGenerator2(leg_Hpypertrophy_Advanced, numOfSet1)
         workoutGenerator2(leg_Hpypertrophy_Advanced2, numOfSet2)
-    #-------------------------------------------------leg Strength
+        #-------------------------------------------------leg Strength
     if resultOfChoices == "leg_Strength_Beginner":
         workoutGenerator2(leg_Strength_Beginner, numOfSet1)
         workoutGenerator2(leg_Strength_Beginner2, numOfSet2)
@@ -348,7 +346,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "leg_Strength_Advanced":
         workoutGenerator2(leg_Strength_Advanced, numOfSet1)
         workoutGenerator2(leg_Strength_Advanced2, numOfSet2)
-    #-------------------------------------------------leg Ender 
+        #-------------------------------------------------leg Ender 
     if resultOfChoices == "leg_Endurance_Beginner":
         workoutGenerator2(leg_Endurance_Beginner, numOfSet1)
         workoutGenerator2(leg_Endurance_Beginner2, numOfSet2)
@@ -358,12 +356,12 @@ if typeOfEx != "Home":
     if resultOfChoices == "leg_Endurance_Advanced":
         workoutGenerator2(leg_Endurance_Advanced, numOfSet1)
         workoutGenerator2(leg_Endurance_Advanced2, numOfSet2)
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
-    #-------------------------------------------------arm Hyper
+        #####################################################################
+        #-------------------------------------------------arm Hyper
     if resultOfChoices == "arm_Hpypertrophy_Beginner":
         workoutGenerator2(arm_Hpypertrophy_Beginner, numOfSet1)
         workoutGenerator2(arm_Hpypertrophy_Beginner2, numOfSet2)
@@ -373,7 +371,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "arm_Hpypertrophy_Advanced":
         workoutGenerator2(arm_Hpypertrophy_Advanced, numOfSet1)
         workoutGenerator2(arm_Hpypertrophy_Advanced2, numOfSet2)
-    #-------------------------------------------------arm Strength
+        #-------------------------------------------------arm Strength
     if resultOfChoices == "arm_Strength_Beginner":
         workoutGenerator2(arm_Strength_Beginner, numOfSet1)
         workoutGenerator2(arm_Strength_Beginner2, numOfSet2)
@@ -382,8 +380,8 @@ if typeOfEx != "Home":
         workoutGenerator2(arm_Strength_Intermediate2, numOfSet2)
     if resultOfChoices == "arm_Strength_Advanced":
         workoutGenerator2(arm_Strength_Advanced, numOfSet1)
-        workoutGenerator2(arm_Strength_Advanced2, numOfSet2)
-    #-------------------------------------------------arm Ender 
+        WorkoutGenerator2(arm_Strength_Advanced2, numOfSet2)
+        #-------------------------------------------------arm Ender 
     if resultOfChoices == "arm_Endurance_Beginner":
         workoutGenerator2(arm_Endurance_Beginner, numOfSet1)
         workoutGenerator2(arm_Endurance_Beginner2, numOfSet2)
@@ -393,12 +391,12 @@ if typeOfEx != "Home":
     if resultOfChoices == "arm_Endurance_Advanced":
         workoutGenerator2(arm_Endurance_Advanced, numOfSet1)
         workoutGenerator2(arm_Endurance_Advanced2, numOfSet2)
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
+        #####################################################################
 
-    #####################################################################
-    #-------------------------------------------------core Hyper
+        #####################################################################
+        #-------------------------------------------------core Hyper
     if resultOfChoices == "core_Hpypertrophy_Beginner":
         workoutGenerator2(core_Hpypertrophy_Beginner, numOfSet1)
         workoutGenerator2(core_Hpypertrophy_Beginner2, numOfSet2)
@@ -408,7 +406,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "core_Hpypertrophy_Advanced":
         workoutGenerator2(core_Hpypertrophy_Advanced, numOfSet1)
         workoutGenerator2(core_Hpypertrophy_Advanced2, numOfSet2)
-    #-------------------------------------------------core Strength
+        #-------------------------------------------------core Strength
     if resultOfChoices == "core_Strength_Beginner":
         workoutGenerator2(core_Strength_Beginner, numOfSet1)
         workoutGenerator2(core_Strength_Beginner2, numOfSet2)
@@ -418,7 +416,7 @@ if typeOfEx != "Home":
     if resultOfChoices == "core_Strength_Advanced":
         workoutGenerator2(core_Strength_Advanced, numOfSet1)
         workoutGenerator2(core_Strength_Advanced2, numOfSet2)
-    #-------------------------------------------------core Ender 
+        #-------------------------------------------------core Ender 
     if resultOfChoices == "core_Endurance_Beginner":
         workoutGenerator2(core_Endurance_Beginner, numOfSet1)
         workoutGenerator2(core_Endurance_Beginner2, numOfSet2)
