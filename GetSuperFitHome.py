@@ -137,12 +137,12 @@ with st.sidebar:
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        if user_name == "no":
+        while user_name == "no":
             st.subheader("login")
             user_name_input = st.sidebar.text_input("Username")
             if st.sidebar.button("Login"):
                 user_name = user_name_input
-        if user_name != "no":
+        while user_name != "no":
             if st.sidebar.button("Logout"):
                 user_name = "no"
         
@@ -174,6 +174,7 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
+    st.write(user_name)
 
 if typeOfEx != "Home":
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
