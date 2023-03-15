@@ -137,10 +137,16 @@ with st.sidebar:
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        st.subheader("login")
-        user_name_input = st.sidebar.text_input("Username")
-        if st.sidebar.button("Login"):
-            user_name = user_name_input
+        if user_name == "no":
+            st.subheader("login")
+            user_name_input = st.sidebar.text_input("Username")
+            if st.sidebar.button("Login"):
+                user_name = user_name_input
+        if user_name != "no":
+            if st.sidebar.button("Logout"):
+                user_name = "no"
+        
+        
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
