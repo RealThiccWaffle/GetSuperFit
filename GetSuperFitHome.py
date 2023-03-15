@@ -188,7 +188,7 @@ def workoutGenerator2(finalResults, NumOfset3):
         num4 = ("")
         num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
         st.write("")
-        if num1 != "":
+        if num1 == "":
             st.write(num1)
         if num2 != "":
             st.write(num2)
