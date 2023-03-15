@@ -30,6 +30,7 @@ def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
 def userLogin(user_login_True):
+            user_name = "no"
             if user_name == "no":
                 user_name_input = st.sidebar.text_input("Username")
                 user_password_input = st.sidebar.text_input("Password")
