@@ -146,7 +146,7 @@ def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
     xNum6str = ""
     with ex1:
         if button("Beginnrer", key = "Beginner") == False:
-            xNum4str = xNum1str + " Beginner" 
+            xNum4str = xNum1str + " Beginner"
     with ex2:
         if button("Intermediate", key = "Intermediate") == False:
             xNum5str = xNum2str + " Intermediate"
@@ -158,12 +158,15 @@ def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
     if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
         BegChoice = BegChoice + "Beginner"
         TypeOfChoice2 = TypeOfChoice2 + "Beginner"
+        st.write("A beginner is a perfect fit if you starting or getting back to fitness!")
     elif xNum5str != "not Intermediate" and xNum4str == "not Beginner" and xNum6str == "not Advanced":
         InterChoice = InterChoice + "Intermediate"
         TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
+        st.write("A intermediate is perfect if you need to up it from beginner!")
     elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
         AdvChoice = AdvChoice + "Advanced"
         TypeOfChoice2 = TypeOfChoice2 + "Advanced"
+        st.write("Advanced is for those who want a good pump!)
     else:
         st.write("please select only one option")
     return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
@@ -188,7 +191,7 @@ def workoutGenerator2(finalResults, NumOfset3):
         num4 = ("")
         num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
         st.write("")
-        if num1 == "":
+        if num1 != "":
             st.write(num1)
         if num2 != "":
             st.write(num2)
