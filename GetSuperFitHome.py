@@ -141,6 +141,7 @@ with st.sidebar:
     if user_name != "no":
         if st.subheader.button("Logout"):
             user_name = "no"
+            user_login_True = False
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
