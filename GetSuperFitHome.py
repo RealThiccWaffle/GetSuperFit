@@ -139,13 +139,17 @@ with st.sidebar:
         st.title("Welcome to the home page")
         if user_name == "no":
             user_name_input = st.sidebar.text_input("Username")
+            user_password_input = st.sidebar.text_input("Password")
             if st.sidebar.button("Login"):
                 user_name = user_name_input
+                user_login_True = True
         if user_name != "no":
             if st.sidebar.button("Logout"):
                 user_name = "no"
+                user_login_True = False
         
-        
+    def userData(user_name_Data):
+        st.write(user_name_Data)
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
@@ -163,7 +167,13 @@ with st.sidebar:
         typeOfEx = "core"
     if selected == "My Data":
         st.title("Your personal Data")
-        typeOfEx = ""
+        typeOfEx = "My Data"
+if typeOfEx == "My Data":
+    if user_login_True == True:
+        st.write("This is your Data")
+    else:
+        st.write("You need to have a account and login to see your data")
+    
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
