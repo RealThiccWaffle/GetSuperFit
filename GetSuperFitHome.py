@@ -173,8 +173,7 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 if typeOfEx == "My Data":
-    user_login_True = False
-    user_login_True = userLogin(user_login_True)
+    userLogin()
     if user_login_True == True:
         st.write(user_name)
     if user_login_True == False:
