@@ -231,7 +231,7 @@ if typeOfEx != "Home":
             num3 = ("")
             num4 = ("")
             num1, num2, num3, num4 = workoutGenerator(num1, num2, num3, num4, finalResults, NumOfset3)
-            t.write("")
+            st.write("")
             if num1 != "":
                 st.write(num1)
             elif num2 != "":
