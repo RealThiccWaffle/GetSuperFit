@@ -141,11 +141,7 @@ with st.sidebar:
             user_name_input = st.sidebar.text_input("Username")
             if st.sidebar.button("Login"):
                 user_name = user_name_input
-                x = user_name
-                if x == user_name:
-                    x = "welcome back " + user_name
-                    user_name_input = x
-        while user_name != "no":
+        if user_name != "no":
             if st.sidebar.button("Logout"):
                 user_name = "no"
         
