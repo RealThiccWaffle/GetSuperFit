@@ -127,6 +127,7 @@ core_Endurance_Advanced = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
 #-----------------SideBar---------------------------------------
 user_name = "no"
+user_login_True = False
 with st.sidebar:
     selected = option_menu(
         menu_title= "Main Menu",
