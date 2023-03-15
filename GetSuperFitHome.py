@@ -34,7 +34,7 @@ def userLogin(user_login_True, userNam, userPass):
             if user_name == "no":
                 userNam = st.sidebar.text_input("Username")
                 userPass = st.sidebar.text_input("Password")
-                login = st.sidebar.radio("Login", "logout")
+                login = st.sidebar.radio("", ("Login", "logout"))
                 if login == "Login":
                     user_name = userNam
                     user_login_True = True
