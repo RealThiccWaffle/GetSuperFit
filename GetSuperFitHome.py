@@ -124,12 +124,15 @@ def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
     if xNum4str != "not Hpypertrophy" and xNum5str == "not Strength" and xNum6str == "not Endurance":
         HyperChoice = HyperChoice + " Hypertrophy"
         TypeOfChoice1 = TypeOfChoice1 + "Hpypertrophy"
+        st.write("Hypertrophy is if your goal is to gain muscle mass")
     elif xNum5str != "not Strength" and xNum4str == "not Hpypertrophy" and xNum6str == "not Endurance":
         StrenChoice = StrenChoice + "strength"
         TypeOfChoice1 = TypeOfChoice1 + "Strength"
+        st.write("Strength is for those you want to get stronger with current muscle mass they have")
     elif xNum6str != "not Endurance" and xNum4str == "not Hpypertrophy" and xNum5str == "not Strength":
         EndurChoice = EndurChoice + "Endurance"
         TypeOfChoice1 = TypeOfChoice1 + "Endurance"
+        st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps") 
     else:
         st.write("please select only one option")
     return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
@@ -158,11 +161,11 @@ def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
     if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
         BegChoice = BegChoice + "Beginner"
         TypeOfChoice2 = TypeOfChoice2 + "Beginner"
-        st.write("A beginner is a perfect fit if you starting or getting back to fitness!")
+        st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
     elif xNum5str != "not Intermediate" and xNum4str == "not Beginner" and xNum6str == "not Advanced":
         InterChoice = InterChoice + "Intermediate"
         TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
-        st.write("A intermediate is perfect if you need to up it from beginner!")
+        st.write("Intermediate is perfect if you need to up it from beginner!")
     elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
         AdvChoice = AdvChoice + "Advanced"
         TypeOfChoice2 = TypeOfChoice2 + "Advanced"
