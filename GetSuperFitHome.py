@@ -34,13 +34,12 @@ def userLogin(user_login_True, userNam, userPass):
             if user_name == "no":
                 userNam = st.sidebar.text_input("Username")
                 userPass = st.sidebar.text_input("Password")
-            if st.sidebar.checkbox("Login"):
+            if st.sidebar.checkbox("Login/logout"):
                 user_name = userNam
                 user_login_True = True
             if user_name != "no":
-                if st.sidebar.checkbox("Logout"):
-                    userNam = "no"
-                    user_login_True = False
+                userNam = "no"
+                user_login_True = False
             return user_login_True, userNam, userPass
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
