@@ -157,9 +157,10 @@ with st.sidebar:
         user_name = "no"
         user_password = "no"
         user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
-    x = user_login_True
-    y = user_name
-    z = user_password
+        x = user_login_True
+        y = user_name
+        z = user_password
+
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
@@ -179,6 +180,7 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 if typeOfEx == "My Data":
+    x, y, z = userLogin.get(user_login_True, user_name, user_password)
     if x == True:
         st.write(y)
     if x == False:
