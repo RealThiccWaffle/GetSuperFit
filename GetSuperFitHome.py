@@ -101,8 +101,47 @@ core_Endurance_Intermediate = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Intermediate2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
+#-----------------SideBar---------------------------------------
+with st.sidebar:
+    selected = option_menu(
+        menu_title= "Main Menu",
+        options= ["Home", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"]
+    )
+    typeOfEx = ""
+    resultOfChoices = ""
+    if selected == "Home":
+        st.title("Welcome to the home page")
+        typeOfEx = "Home"
+    if selected == "Chest Day":
+        st.title("Lets build a chest workout")
+        typeOfEx = "chest"
+    if selected == "Back/Shoulder Day":
+        st.title("Lets build a back/shoulder workout")
+        typeOfEx = "back_shoulder"
+    if selected == "Leg Day":
+        st.title("Lets build a leg workout")
+        typeOfEx = "leg"
+    if selected == "Arm Day":
+        st.title("Lets build a arm workout")
+        typeOfEx = "arm"
+    if selected == "Core Day":
+        st.title("Lets build a core workout")
+        typeOfEx = "core"
+    if selected == "My Data":
+        st.title("Your personal Data")
+        typeOfEx = ""
+if typeOfEx == "Home":
+    """
+    #    WELCOME TO THE GET SUPER FIT APP
+    #  Use this app to help you get fit!
+    
+    # About the App
+    This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
+    If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
+    """
+if typeOfEx != "" or typeOfEX != "Home":
 #---------------1st Parameter Function----------------
-def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
+    def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
     ex1, ex2, ex3 = st.columns(3)
     xNum1str = "not"
     xNum2str = "not"
@@ -202,45 +241,6 @@ def workoutGenerator2(finalResults, NumOfset3):
             st.write(num3)
         if num4 != "":
             st.write(num4)
-#-----------------SideBar---------------------------------------
-with st.sidebar:
-    selected = option_menu(
-        menu_title= "Main Menu",
-        options= ["Home", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"]
-    )
-    typeOfEx = ""
-    resultOfChoices = ""
-    if selected == "Home":
-        st.title("Welcome to the home page")
-        typeOfEx = "Home"
-    if selected == "Chest Day":
-        st.title("Lets build a chest workout")
-        typeOfEx = "chest"
-    if selected == "Back/Shoulder Day":
-        st.title("Lets build a back/shoulder workout")
-        typeOfEx = "back_shoulder"
-    if selected == "Leg Day":
-        st.title("Lets build a leg workout")
-        typeOfEx = "leg"
-    if selected == "Arm Day":
-        st.title("Lets build a arm workout")
-        typeOfEx = "arm"
-    if selected == "Core Day":
-        st.title("Lets build a core workout")
-        typeOfEx = "core"
-    if selected == "My Data":
-        st.title("Your personal Data")
-        typeOfEx = ""
-if typeOfEx == "Home":
-    """
-    #    WELCOME TO THE GET SUPER FIT APP
-    #  Use this app to help you get fit!
-    
-    # About the App
-    This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
-    If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
-    """
-if typeOfEx != "" or typeOfEX != "Home":
     choice1 = "yes"
     choice2 = "yes"
     choice3 = "yes"
