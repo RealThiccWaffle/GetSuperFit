@@ -140,6 +140,9 @@ core_Endurance_Advanced = ["a", "b", "c", "d", "a", "b", "c", "d"]
 core_Endurance_Advanced2 = ["a", "b", "c", "d", "a", "b", "c", "d"]
 #-----------------SideBar---------------------------------------
 user_name = "no"
+x = False
+y = "no"
+z = "no"
 with st.sidebar:
     selected = option_menu(
         menu_title= "Main Menu",
@@ -154,6 +157,9 @@ with st.sidebar:
         user_name = "no"
         user_password = "no"
         user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
+    x = user_login_True
+    y = user_name
+    z = user_password
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
@@ -173,14 +179,11 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 if typeOfEx == "My Data":
-    userLogin()
-    if user_login_True == True:
-        st.write(user_name)
-    if user_login_True == False:
-        st.write("You need to login to see your data")
-    else:
-        st.write("You need to have a account and login to see your data")
-        st.write(user_name)
+    if x == True:
+        st.write(y)
+    if x == False:
+        st.write("You must first login to see data")
+        
     
 if typeOfEx == "Home":
     """
