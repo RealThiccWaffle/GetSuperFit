@@ -180,6 +180,9 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 if typeOfEx == "My Data":
+    x = False
+    y = "no"
+    z = "no"
     x, y, z = userLogin.get(user_login_True, user_name, user_password)
     if x == True:
         st.write(y)
