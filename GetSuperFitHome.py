@@ -25,6 +25,7 @@ def workoutGenerator2(finalResults, NumOfset3):
             st.write(num2)
             st.write(num3)
             st.write(num4)
+            st.write("hello")
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
