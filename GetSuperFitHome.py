@@ -186,7 +186,7 @@ if typeOfEx == "Home":
     """
     st.write(user_name)
 
-if typeOfEx != "Home":
+if typeOfEx != "Home" and typeOfEx != "My Data":
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
         ex1, ex2, ex3 = st.columns(3)
         xNum1str = "not"
