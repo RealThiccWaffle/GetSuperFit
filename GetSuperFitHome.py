@@ -39,7 +39,7 @@ def userLogin(user_login_True, userNam, userPass):
                 user_login_True = True
             if user_name != "no":
                 if st.sidebar.button("Logout"):
-                    user_name = "no"
+                    userNam = "no"
                     user_login_True = False
             return user_login_True, userNam, userPass
 #--------------------List----------------------------
@@ -176,7 +176,9 @@ if typeOfEx == "My Data":
     user_login_True = False
     user_login_True = userLogin(user_login_True)
     if user_login_True == True:
-        st.write("This is your Data")
+        st.write(user_name)
+    if user_login_True == False:
+        st.write("You need to login to see your data")
     else:
         st.write("You need to have a account and login to see your data")
         st.write(user_name)
