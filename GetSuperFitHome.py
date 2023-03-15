@@ -235,28 +235,30 @@ if typeOfEx != "" or typeOfEX != "Home":
             t.write("")
             if num1 != "":
                 st.write(num1)
-            if num2 != "":
+            elif num2 != "":
                 st.write(num2)
-            if num3 != "":
+            elif num3 != "":
                 st.write(num3)
-            if num4 != "":
+            elif num4 != "":
                 st.write(num4)
-            choice1 = "yes"
-            choice2 = "yes"
-            choice3 = "yes"
-            choice4 = "_"
-            HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
-            BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
-            if BegChoice == "yesBeginner":
-                numOfSet1 = 2
-                numOfSet2 = 2
-            if interChoice == "yesIntermediate":
-                numOfSet1 = 3
-                numOfSet2 = 3
-            if advChoice == "yesAdvanced":
-                numOfSet1 = 4
-                numOfSet2 = 4
-            resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
+            else:
+                abcd = 0
+       choice1 = "yes"
+       choice2 = "yes"
+       choice3 = "yes"
+       choice4 = "_"
+       HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
+       BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
+       if BegChoice == "yesBeginner":
+            numOfSet1 = 2
+            numOfSet2 = 2
+       if interChoice == "yesIntermediate":
+            numOfSet1 = 3
+            numOfSet2 = 3
+       if advChoice == "yesAdvanced":
+            numOfSet1 = 4
+            numOfSet2 = 4
+       resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
     #-------------------------------------------------chest Hyper
     if resultOfChoices == "chest_Hpypertrophy_Beginner":
         workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
