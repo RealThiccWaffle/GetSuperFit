@@ -139,7 +139,7 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
-if typeOfEX != "Home":
+if typeOfEx != "Home" or typeOfEx != "":
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
         ex1, ex2, ex3 = st.columns(3)
         xNum1str = "not"
