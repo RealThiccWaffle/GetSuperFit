@@ -107,7 +107,7 @@ with st.sidebar:
         menu_title= "Main Menu",
         options= ["Home", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"]
     )
-    typeOfEx = ""
+    typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
         st.title("Welcome to the home page")
@@ -139,8 +139,7 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
-if typeOfEx != "" or typeOfEX != "Home":
-#---------------1st Parameter Function----------------
+if typeOfEX != "Home":
     def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
         ex1, ex2, ex3 = st.columns(3)
         xNum1str = "not"
