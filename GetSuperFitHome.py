@@ -29,19 +29,19 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userLogin(user_login_True):
+def userLogin(user_login_True, userNam, userPass):
             user_name = "no"
             if user_name == "no":
-                user_name_input = st.sidebar.text_input("Username")
-                user_password_input = st.sidebar.text_input("Password")
+                userNam = st.sidebar.text_input("Username")
+                userPass = st.sidebar.text_input("Password")
             if st.sidebar.button("Login"):
-                user_name = user_name_input
+                user_name = userNam
                 user_login_True = True
             if user_name != "no":
                 if st.sidebar.button("Logout"):
                     user_name = "no"
                     user_login_True = False
-            return user_login_True
+            return user_login_True, userNam, userPass
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -151,7 +151,9 @@ with st.sidebar:
         typeOfEx = "Home"
         st.title("Welcome to the home page")
         user_login_True = False
-        user_login_True = userLogin(user_login_True)
+        user_name = "no"
+        user_password = "no"
+        user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
