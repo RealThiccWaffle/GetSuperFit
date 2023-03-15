@@ -138,7 +138,7 @@ with st.sidebar:
         st.title("Welcome to the home page")
         st.subheader("login")
         user_name_input = st.text_input("Username")
-        if button("Login"):
+        if st.button("Login"):
             user_name = user_name_input
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
