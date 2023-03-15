@@ -134,10 +134,12 @@ with st.sidebar:
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
+        typeOfEx = "Home"
         st.title("Welcome to the home page")
         st.subheader("login")
-        user_name = st.subheader.button("Login")
-        typeOfEx = "Home"
+        user_name_input = st.text.input("Username")
+        if button("Login"):
+            user_name = user_name_input
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
@@ -157,6 +159,7 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = ""
 if typeOfEx == "Home":
+    st.write(user_name)
     """
     #    WELCOME TO THE GET SUPER FIT APP
     #  Use this app to help you get fit!
