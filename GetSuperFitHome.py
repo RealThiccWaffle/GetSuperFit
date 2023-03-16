@@ -176,13 +176,12 @@ with st.sidebar:
 varUser = False
 
 while varUser == False:
-    with st.empty():
-        with st.sidebar.form(key='my_form'):
-            user_name = st.text_input("Usrename")
-            user_password = st.text_input("Password")
-            st.form_submit_button("Login")
-        if user_name != "no":
-            varUser = True
+    with st.sidebar.form(key='my_form'):
+        user_name = st.text_input("Usrename")
+        user_password = st.text_input("Password")
+        st.form_submit_button("Login")
+    if user_name != "no":
+        varUser = True
     st.empty(st)
 if typeOfEx == "Home":
     """
