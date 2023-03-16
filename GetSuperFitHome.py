@@ -174,9 +174,9 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 varUser = False
+pa = st.empty()
 while varUser == False:
     with st.empty():
-        pa = st.empty()
         with st.sidebar.form(key='my_form'):
             user_name = pa.text_input("Usrename")
             user_password = pa.text_input("Password")
