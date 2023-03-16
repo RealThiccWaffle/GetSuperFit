@@ -238,7 +238,7 @@ if typeOfEx != "My Data":
             xNum4str = ""
             xNum5str = ""
             xNum6str = ""
-            xyt = st.selectbox("select exercise goal", ("Beginner", "Intermediate", "Advanced"))
+            xyt = st.selectbox("Please select a exercise goal", ("None", "Beginner", "Intermediate", "Advanced"))
             if xyt == "Beginner":
                 BegChoice = BegChoice + "Beginner"
                 TypeOfChoice2 = TypeOfChoice2 + "Beginner"
@@ -253,7 +253,7 @@ if typeOfEx != "My Data":
                 TypeOfChoice2 = TypeOfChoice2 + "Advanced"
                 st.write("Advanced is for those who want a good pump!")
             else:
-                st.write("please select only one option")
+                st.write("description")
             #with ex1:
                 #if button("Beginnrer", key = "Beginner") == False:
                     #xNum4str = xNum1str + " Beginner"
