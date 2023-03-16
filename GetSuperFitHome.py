@@ -172,7 +172,7 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-while typeOfEx != "":
+if typeOfEx != "":
     user_login_True = False
     user_name = "no"
     user_password = "no"
