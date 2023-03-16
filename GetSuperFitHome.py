@@ -183,7 +183,7 @@ while varUser == False:
             pa.form_submit_button("Login")
         if user_name != "no":
             varUser = True
-        st.empty(pa)
+    st.empty(pa)
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
