@@ -32,12 +32,15 @@ def resultsOfButtons(type1, type2, type3, type4):
 def userLogin(user_login_True, userNam, userPass):
             userNam = "no"
             userPass = "no"
+            numX = ""
+            numY = ""
             if userNam == "no":
                 userNam = st.sidebar.text_input("Username")
                 numA, numB = st.columns(2)
-                if st.sidebar.radio("", ('chest')):
+                numX = st.sidebar.radio("", ('Login', 'Logout')):
+                if numX == "Login":
                     user_login_True = True
-                if st.sidebar.radio("", ('Logout')):
+                if numX == "Logout":
                     userNam = "no"
                     user_login_True = False
                 else:
