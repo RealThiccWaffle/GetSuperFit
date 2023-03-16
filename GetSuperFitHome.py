@@ -31,10 +31,10 @@ def resultsOfButtons(type1, type2, type3, type4):
             return type4
 def userLogin(user_login_True, userNam, userPass):
             userNam = "no"
+            userPass = "no"
             if userNam == "no":
                 while userNam == "no":
                     userNam = st.sidebar.text_input("Username")
-                    userPass = st.sidebar.text_input("Password")
                     numA, numB = st.columns(2)
                     if st.sidebar.button("Login", key = "login"):
                         user_login_True = True
