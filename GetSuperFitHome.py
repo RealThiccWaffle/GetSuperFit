@@ -173,13 +173,16 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-def userCheck():
+def userCheck(user_name, user_password):
     with st.sidebar.form(key='my_form'):
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
+    return user_name, user_password
 while user_name == "no":
-    st.write(userCheck())
+    user_name = ""
+    user_password = ""
+    user_name, user_password = st.write(userCheck(user_name, user_password))
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
