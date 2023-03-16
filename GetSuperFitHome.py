@@ -173,10 +173,6 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 if typeOfEx != "":
-    user_login_True = False
-    user_name = "no"
-    user_password = "no"
-    user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
     with st.sidebar.form(key='my_form'):
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
