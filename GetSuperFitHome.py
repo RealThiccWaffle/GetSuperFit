@@ -181,6 +181,7 @@ while varUser == False:
         user_password = ab.text_input("Password")
         st.form_submit_button("Login")
         user = "no"
+        password = "no" 
         st.form_submit_button("Logout")
     if user_name != "no":
         varUser = True
