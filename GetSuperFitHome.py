@@ -180,7 +180,7 @@ while varUser == False:
         with st.sidebar.form(key='my_form'):
             user_name = pa.text_input("Usrename")
             user_password = pa.text_input("Password")
-            pa.form_submit_button("Login")
+            st.form_submit_button("Login")
         if user_name != "no":
             varUser = True
     st.empty(pa)
