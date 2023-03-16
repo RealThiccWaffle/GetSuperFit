@@ -37,9 +37,9 @@ def userLogin(user_login_True, userNam, userPass):
             if userNam == "no":
                 userNam = st.sidebar.text_input("Username")
                 st.sidebar.radio(('Login', 'Logout'), key = "Login")
-                if "Login":
+                if st.session_state.Login == "Login":
                     uaser_login_True = True
-                else:
+                if st.session_state.Login == "Logout":
                     userNam = "no"
                     user_login_True = False
             return user_login_True, userNam, userPass
