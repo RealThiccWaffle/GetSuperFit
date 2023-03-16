@@ -177,7 +177,6 @@ if typeOfEx != "":
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
-        st.form.unsubmit_button("Lougout")
 if typeOfEx == "My Data":
     if user_name != "no":
         st.write("Hello "+user_name) 
