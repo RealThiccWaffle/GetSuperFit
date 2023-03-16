@@ -180,9 +180,9 @@ while varUser == False:
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
+        st.empty()
     if user_name != "no":
         varUser = True
-    st.empty()
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
