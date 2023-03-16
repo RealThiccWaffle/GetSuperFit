@@ -240,11 +240,20 @@ if typeOfEx != "My Data":
             xNum6str = ""
             xyt = st.selectbox("select exercise goal", ("Beginner", "Intermediate", "Advanced"))
             if xyt == "Beginner":
-                xNum4str = xNum1str + " Beginner"
-            if xyt == "Intermediate":
-                xNum5str = xNum2str + " Intermediate"
-            if xyt == "Advanced":
+                BegChoice = BegChoice + "Beginner"
+                TypeOfChoice2 = TypeOfChoice2 + "Beginner"
+                st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
+            elif xyt == "Intermediate":
+                InterChoice = InterChoice + "Intermediate"
+                TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
+                st.write("Intermediate is perfect if you need to up it from beginner!")
+            elif xyt == "Advanced":
                 xNum6str = xNum3str + " Advanced"
+                AdvChoice = AdvChoice + "Advanced"
+                TypeOfChoice2 = TypeOfChoice2 + "Advanced"
+                st.write("Advanced is for those who want a good pump!")
+            else:
+                st.write("please select only one option")
             #with ex1:
                 #if button("Beginnrer", key = "Beginner") == False:
                     #xNum4str = xNum1str + " Beginner"
@@ -254,22 +263,6 @@ if typeOfEx != "My Data":
             #with ex3:
                 #if button("Advanced", key = "Advanced") == False:
                     #xNum6str = xNum3str + " Advanced"
-
-
-            if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
-                BegChoice = BegChoice + "Beginner"
-                TypeOfChoice2 = TypeOfChoice2 + "Beginner"
-                st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
-            elif xNum5str != "not Intermediate" and xNum4str == "not Beginner" and xNum6str == "not Advanced":
-                InterChoice = InterChoice + "Intermediate"
-                TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
-                st.write("Intermediate is perfect if you need to up it from beginner!")
-            elif xNum6str != "not Advanced" and xNum4str == "not Beginner" and xNum5str == "not Intermediate":
-                AdvChoice = AdvChoice + "Advanced"
-                TypeOfChoice2 = TypeOfChoice2 + "Advanced"
-                st.write("Advanced is for those who want a good pump!")
-            else:
-                st.write("please select only one option")
             return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
         choice1 = "yes"
         choice2 = "yes"
