@@ -30,8 +30,9 @@ def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
 def userLogin(user_login_True, userNam, userPass):
+            userNam = "no"
             if userNam == "no":
-                while user_login_True == False:
+                while userNam == "no":
                     userNam = st.sidebar.text_input("Username")
                     userPass = st.sidebar.text_input("Password")
                     numA, numB = st.columns(2)
@@ -155,10 +156,12 @@ with st.sidebar:
         user_login_True = False
         user_name = "no"
         user_password = "no"
-        user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
-        x = user_login_True
-        y = user_name
-        z = user_password
+        while user_login_True == False:
+            user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
+        #x = user_login_True
+        #y = user_name
+        #z = user_password
+        
 
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
