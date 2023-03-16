@@ -182,7 +182,7 @@ def userCheck(user_name, user_password):
 if user_name == "no":
     user_name = ""
     user_password = ""
-    user_name, user_password = userCheck(user_name, user_password)
+    #user_name, user_password = userCheck(user_name, user_password)
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
