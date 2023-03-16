@@ -173,11 +173,11 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
+with st.sidebar.form(key='my_form'):
+    user_name = st.text_input("Usrename")
+    user_password = st.text_input("Password")
+    st.form_submit_button("Login")
 if typeOfEx == "Home":
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        user_password = st.text_input("Password")
-        st.form_submit_button("Login")
     """
     #    WELCOME TO THE GET SUPER FIT APP
     #  Use this app to help you get fit!
