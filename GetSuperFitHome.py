@@ -178,7 +178,8 @@ if typeOfEx != "":
     user_password = "no"
     user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
 if typeOfEx == "My Data":
-    st.write("Hello " + user_name) 
+    if user_name != "no":
+        st.write("Hello "+user_name) 
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
@@ -188,7 +189,8 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
-    st.write("Hello "+user_name)
+    if user_name != "no":
+        st.write("Hello "+user_name)
 if typeOfEx != "My Data":
     if typeOfEx != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
