@@ -179,10 +179,10 @@ def userCheck(user_name, user_password):
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
     return user_name, user_password
-if user_name == "no":
+while user_name == "no":
     user_name = ""
     user_password = ""
-    user_name, user_password = st.write(userCheck(user_name, user_password))
+    user_name, user_password = userCheck(user_name, user_password)
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
