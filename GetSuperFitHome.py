@@ -35,13 +35,16 @@ def userLogin(user_login_True, userNam, userPass):
                 userNam = st.sidebar.text_input("Username")
                 userPass = st.sidebar.text_input("Password")
                 numA, numB = st.columns(2)
-                login = st.sidebar.radio("Login", key = "login")
-                logout = st.sidebar.button("Logout", key = "logout")
-                if login == "Login":
+                if st.sidebar.radio("Login", key = "login"):
                     user_login_True = True
-                if logout == "logout":
+                if st.sidebar.button("Logout", key = "logout"):
                     userNam = "no"
                     user_login_True = False
+                #if login == "Login":
+                    #user_login_True = True
+                #if logout == "logout":
+                    #userNam = "no"
+                    #user_login_True = False
             if userNam != "no":
                 userNam = "no"
                 user_login_True = False
