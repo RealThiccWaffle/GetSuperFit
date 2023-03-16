@@ -40,7 +40,7 @@ def userLogin(user_login_True, userNam, userPass):
                 if sta == "Login":
                     uaser_login_True = True
                 if sta == "Logout":
-                    userNam = "no"
+                    userNam = "You need to login"
                     user_login_True = False
             return user_login_True, userNam, userPass
 #--------------------List----------------------------
