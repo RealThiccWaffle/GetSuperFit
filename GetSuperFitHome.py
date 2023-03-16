@@ -33,11 +33,10 @@ def userLogin(user_login_True, userNam, userPass):
             userNam = "no"
             userPass = "no"
             if userNam == "no":
-                while userNam == "no":
-                    userNam = st.sidebar.text_input("Username")
-                    numA, numB = st.columns(2)
-                    if st.sidebar.button("Login", key = "login"):
-                        user_login_True = True
+                userNam = st.sidebar.text_input("Username")
+                numA, numB = st.columns(2)
+                if st.sidebar.button("Login", key = "login"):
+                    user_login_True = True
                 if st.sidebar.button("Logout", key = "logout"):
                     userNam = "no"
                     user_login_True = False
