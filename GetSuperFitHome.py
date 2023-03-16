@@ -224,7 +224,6 @@ if typeOfEx != "My Data":
                 TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
                 st.write("Intermediate is perfect if you need to up it from beginner!")
             elif xyt == "Advanced":
-                xNum6str = xNum3str + " Advanced"
                 AdvChoice = AdvChoice + "Advanced"
                 TypeOfChoice2 = TypeOfChoice2 + "Advanced"
                 st.write("Advanced is for those who want a good pump!")
