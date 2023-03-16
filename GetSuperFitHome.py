@@ -178,7 +178,7 @@ if typeOfEx != "":
     user_password = "no"
     user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
 if typeOfEx == "My Data":
-        st.write(user_name) 
+    st.write(user_name) 
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
