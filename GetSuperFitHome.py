@@ -173,7 +173,7 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-with user_name == "no":
+while user_name == "no":
     with st.sidebar.form(key='my_form'):
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
