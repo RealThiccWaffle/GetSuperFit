@@ -177,7 +177,7 @@ if typeOfEx != "":
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
-    with st.sidebar.form(key = 'my_form'):
+    with st.sidebar.form(key = 'my'):
         user_name = ""
         user_password = ""
         st.form_submit_button("logout")
