@@ -41,6 +41,8 @@ def userLogin(user_login_True, userNam, userPass):
                 if st.sidebar.button("Logout", key = "logout"):
                     userNam = "no"
                     user_login_True = False
+                else:
+                    st.write("Noooooooo")
             return user_login_True, userNam, userPass
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
