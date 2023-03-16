@@ -173,9 +173,6 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-if typeOfEx == "My Data":
-    if user_name != "no":
-        st.write("Hello "+user_name) 
 if typeOfEx == "Home":
     with st.sidebar.form(key='my_form'):
         user_name = st.text_input("Usrename")
@@ -191,6 +188,9 @@ if typeOfEx == "Home":
     """
     if user_name != "":
         st.write("Hello "+user_name)
+if typeOfEx == "My Data":
+    if user_name != "no":
+        st.write("Hello "+user_name) 
 if typeOfEx != "My Data":
     if typeOfEx != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
