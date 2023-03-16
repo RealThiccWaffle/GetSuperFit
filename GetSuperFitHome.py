@@ -189,8 +189,8 @@ if typeOfEx == "Home":
     if user_name != "":
         st.write("Hello "+user_name)
 if typeOfEx == "My Data":
-    if user_name != "no":
-        st.write("Hello "+user_name) 
+    #if user_name != "no":
+    st.write("Hello "+user_name) 
 if typeOfEx != "My Data":
     if typeOfEx != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
