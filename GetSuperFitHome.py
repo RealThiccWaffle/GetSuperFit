@@ -251,6 +251,7 @@ if typeOfEx != "My Data":
         if BegChoice == "yesBeginner":
             numOfSet1 = 2
             numOfSet2 = 2
+            typeOfEx = "Home"
         if interChoice == "yesIntermediate":
             numOfSet1 = 3
             numOfSet2 = 3
