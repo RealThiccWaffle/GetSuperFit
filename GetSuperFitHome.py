@@ -177,6 +177,10 @@ if typeOfEx != "":
     user_name = "no"
     user_password = "no"
     user_login_True, user_name, user_password = userLogin(user_login_True, user_name, user_password)
+    with st.sidebar.form(key='my_form'):
+        user_name = st.text_input("Usrename")
+        user_password = st.text_input("Password")
+        st.form_submit_button("Login")
 if typeOfEx == "My Data":
     if user_name != "no":
         st.write("Hello "+user_name) 
