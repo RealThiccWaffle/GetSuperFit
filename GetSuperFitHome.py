@@ -178,6 +178,7 @@ while user_name == "no":
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
+    continue
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
