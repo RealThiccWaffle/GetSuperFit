@@ -182,7 +182,7 @@ def userCheck(user_name, user_password, varUser):
         varUser = True
     return user_name, user_password, varUser
 varUser = False
-if varUser == False:
+while varUser == False:
     user_name = "no"
     user_password = "no"
     varUser = False
