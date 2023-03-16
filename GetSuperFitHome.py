@@ -189,7 +189,7 @@ if typeOfEx == "Home":
     This app generates workouts base on what you, the user, inputs. On the sidebar, there are options that correlate to different days which they should be performed on.
     If the user/you clicks on Chest, in the sidebar, it will only generate exercises for chest.
     """
-    if user_name != "no":
+    if user_name != "":
         st.write("Hello "+user_name)
 if typeOfEx != "My Data":
     if typeOfEx != "Home":
