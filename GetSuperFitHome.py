@@ -36,14 +36,12 @@ def userLogin(user_login_True, userNam, userPass):
             numY = ""
             if userNam == "no":
                 userNam = st.sidebar.text_input("Username")
-                key = st.sidebar.radio(('Login', 'Logout'), key = "Login", Key = "Logout")
+                st.sidebar.radio(('Login', 'Logout'), key = "Login")
                 if "Login":
                     uaser_login_True = True
-                if "Logout":
+                else:
                     userNam = "no"
                     user_login_True = False
-                else:
-                    st.write("Noooooooo")
             return user_login_True, userNam, userPass
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
