@@ -178,7 +178,7 @@ def userCheck():
         user_name = st.text_input("Usrename")
         user_password = st.text_input("Password")
         st.form_submit_button("Login")
-if user_name == "no":
+while user_name == "no":
     st.write(userCheck())
 if typeOfEx == "Home":
     """
