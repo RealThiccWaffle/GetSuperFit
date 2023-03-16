@@ -173,16 +173,16 @@ with st.sidebar:
     if selected == "My Data":
         st.title("Your personal Data")
         typeOfEx = "My Data"
-def userCheck(user_name, user_password, varUser):
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        user_password = st.text_input("Password")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
-    return user_name, user_password, varUser
 varUser = False
 while varUser == False:
+    def userCheck(user_name, user_password, varUser):
+        with st.sidebar.form(key='my_form'):
+            user_name = st.text_input("Usrename")
+            user_password = st.text_input("Password")
+            st.form_submit_button("Login")
+        if user_name != "no":
+            varUser = True
+        return user_name, user_password, varUser
     user_name = "no"
     user_password = "no"
     varUser = False
