@@ -174,15 +174,14 @@ with st.sidebar:
         st.title("Your personal Data")
         typeOfEx = "My Data"
 varUser = False
-ab = ""
-ab = st.empty(ab)
+ab = st.empty()
 while varUser == False:
     with st.sidebar.form(key='my_form'):
         user_name = ab.text_input("Usrename")
         user_password = ab.text_input("Password")
         st.form_submit_button("Login")
-        ab.empty(user_name)
-        ab.empty(user_password)
+        ab.empty()
+        ab.empty()
         st.form_submit_button("Logout")
     if user_name != "no":
         varUser = True
