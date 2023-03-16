@@ -146,7 +146,7 @@ y = "no"
 z = "no"
 with st.sidebar:
     selected = option_menu(
-        menu_title= "Main Menu",
+        #menu_title= "Main Menu",
         options= [(st.selectbox("Home", ("Home", "My account", "Settings"))), "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"]
     )
     typeOfEx = "Home"
