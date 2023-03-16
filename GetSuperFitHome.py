@@ -186,7 +186,7 @@ while varUser == False:
     user_name = "no"
     user_password = "no"
     varUser = False
-    userCheck()
+    userCheck(user_name, user_password, varUser)
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
