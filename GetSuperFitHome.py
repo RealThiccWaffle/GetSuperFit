@@ -194,51 +194,27 @@ if typeOfEx == "Home":
 if typeOfEx != "My Data":
     if typeOfEx != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
-            ex1, ex2, ex3 = st.columns(3)
-            xNum1str = "not"
-            xNum2str = "not"
-            xNum3str = "not"
-            xNum4str = ""
-            xNum5str = ""
-            xNum6str = ""
-            with ex1:
-                if button("Hpypertrophy", key = "Hpypertrophy") == False:
-                    xNum4str = xNum1str + " Hpypertrophy" 
-            with ex2:
-                if button("Strength", key = "Strength") == False:
-                    xNum5str = xNum2str + " Strength"
-            with ex3:
-                if button("Endurance", key = "Endurance") == False:
-                    xNum6str = xNum3str + " Endurance"
-
-
-            if xNum4str != "not Hpypertrophy" and xNum5str == "not Strength" and xNum6str == "not Endurance":
+            tyz = st.selectbox("Please choose what kind of trying you want", ("None", "Hypertrophy", "Strength", "Endurance"))
+            if tyz == "Hypertrophy":
                 HyperChoice = HyperChoice + " Hypertrophy"
-                TypeOfChoice1 = TypeOfChoice1 + "Hpypertrophy"
+                TypeOfChoice1 = TypeOfChoice1 + "Hypertrophy"
                 st.write("Hypertrophy is if your goal is to gain muscle mass")
-            elif xNum5str != "not Strength" and xNum4str == "not Hpypertrophy" and xNum6str == "not Endurance":
-                StrenChoice = StrenChoice + "strength"
+            elif tyz == "Strength":
+                StrenChoice = StrenChoice + "Strength"
                 TypeOfChoice1 = TypeOfChoice1 + "Strength"
                 st.write("Strength is for those you want to get stronger with current muscle mass they have")
-            elif xNum6str != "not Endurance" and xNum4str == "not Hpypertrophy" and xNum5str == "not Strength":
+            elif tyz == "Endurance":
                 EndurChoice = EndurChoice + "Endurance"
                 TypeOfChoice1 = TypeOfChoice1 + "Endurance"
-                st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps") 
+                st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps")
             else:
-                st.write("please select only one option")
+                st.write("description")
             return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
 
 
     #---------------2nd Parameter Function----------------
         def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
-            #ex1, ex2, ex3 = st.columns(3)
-            xNum1str = "not"
-            xNum2str = "not"
-            xNum3str = "not"
-            xNum4str = ""
-            xNum5str = ""
-            xNum6str = ""
-            xyt = st.selectbox("Please select a exercise goal", ("None", "Beginner", "Intermediate", "Advanced"))
+            xyt = st.selectbox("Please select your fitness level", ("None", "Beginner", "Intermediate", "Advanced"))
             if xyt == "Beginner":
                 BegChoice = BegChoice + "Beginner"
                 TypeOfChoice2 = TypeOfChoice2 + "Beginner"
@@ -254,15 +230,6 @@ if typeOfEx != "My Data":
                 st.write("Advanced is for those who want a good pump!")
             else:
                 st.write("description")
-            #with ex1:
-                #if button("Beginnrer", key = "Beginner") == False:
-                    #xNum4str = xNum1str + " Beginner"
-            #with ex2:
-                #if button("Intermediate", key = "Intermediate") == False:
-                    #xNum5str = xNum2str + " Intermediate"
-            #with ex3:
-                #if button("Advanced", key = "Advanced") == False:
-                    #xNum6str = xNum3str + " Advanced"
             return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
         choice1 = "yes"
         choice2 = "yes"
