@@ -180,9 +180,7 @@ while varUser == False:
         user_name = ab.text_input("Usrename")
         user_password = ab.text_input("Password")
         st.form_submit_button("Login")
-        ab = st.empty()
         user_name = ab.text_input("Usrename")
-        ab = st.empty()
         user_password = ab.text_input("Password")
         st.form_submit_button("Logout")
     if user_name != "no":
