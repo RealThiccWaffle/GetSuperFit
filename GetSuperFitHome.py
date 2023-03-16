@@ -231,22 +231,29 @@ if typeOfEx != "My Data":
 
     #---------------2nd Parameter Function----------------
         def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
-            ex1, ex2, ex3 = st.columns(3)
+            #ex1, ex2, ex3 = st.columns(3)
             xNum1str = "not"
             xNum2str = "not"
             xNum3str = "not"
             xNum4str = ""
             xNum5str = ""
             xNum6str = ""
-            with ex1:
-                if button("Beginnrer", key = "Beginner") == False:
-                    xNum4str = xNum1str + " Beginner"
-            with ex2:
-                if button("Intermediate", key = "Intermediate") == False:
-                    xNum5str = xNum2str + " Intermediate"
-            with ex3:
-                if button("Advanced", key = "Advanced") == False:
-                    xNum6str = xNum3str + " Advanced"
+            xyt = st.selectbox("select exercise goal", ("Beginner", "Intermediate", "Advanced"))
+            if xyt == "Beginner":
+                xNum4str = xNum1str + " Beginner"
+            if xyt == "Intermediate":
+                xNum5str = xNum2str + " Intermediate"
+            if xyt == "Advanced":
+                xNum6str = xNum3str + " Advanced"
+            #with ex1:
+                #if button("Beginnrer", key = "Beginner") == False:
+                    #xNum4str = xNum1str + " Beginner"
+            #with ex2:
+                #if button("Intermediate", key = "Intermediate") == False:
+                    #xNum5str = xNum2str + " Intermediate"
+            #with ex3:
+                #if button("Advanced", key = "Advanced") == False:
+                    #xNum6str = xNum3str + " Advanced"
 
 
             if xNum4str != "not Beginner" and xNum5str == "not Intermediate" and xNum6str == "not Advanced":
