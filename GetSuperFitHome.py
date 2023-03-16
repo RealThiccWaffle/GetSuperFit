@@ -176,13 +176,14 @@ with st.sidebar:
 varUser = False
 while varUser == False:
     with st.empty():
+        pa = st.empty()
         with st.sidebar.form(key='my_form'):
-            user_name = st.text_input("Usrename")
-            user_password = st.text_input("Password")
-            st.form_submit_button("Login")
+            user_name = pa.text_input("Usrename")
+            user_password = pa.text_input("Password")
+            pa.form_submit_button("Login")
         if user_name != "no":
             varUser = True
-        st.empty_submit_button("logout")
+        st.empty(pa)
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
