@@ -154,7 +154,6 @@ with st.sidebar:
     if selected == "Home":
         typeOfEx = "Home"
         st.title("Welcome to the home page")
-        st.selectbox("Home", ("Login", "My account", "Settings"))
     if selected == "Chest Day":
         st.title("Lets build a chest workout")
         typeOfEx = "chest"
