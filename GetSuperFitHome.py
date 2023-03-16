@@ -187,7 +187,7 @@ def varUser(varUser1):
         varUser1 = True
     return varUser1
 varUser1 = False
-while varUser1 == False:
+if varUser1 == False:
     varUser1 = varUser(varUser1)
 if typeOfEx == "Home":
     """
