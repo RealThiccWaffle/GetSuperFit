@@ -186,7 +186,7 @@ while varUser == False:
     user_name = "no"
     user_password = "no"
     varUser = False
-    user_name, user_password, varUser = userCheck(user_name, user_password, varUser)
+    userCheck()
 if typeOfEx == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
@@ -251,7 +251,6 @@ if typeOfEx != "My Data":
         if BegChoice == "yesBeginner":
             numOfSet1 = 2
             numOfSet2 = 2
-            typeOfEx = "Home"
         if interChoice == "yesIntermediate":
             numOfSet1 = 3
             numOfSet2 = 3
