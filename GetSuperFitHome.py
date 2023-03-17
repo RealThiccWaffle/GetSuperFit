@@ -265,7 +265,7 @@ if typeOfEx != "My Data":
         resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
         
             #-------------------------------------------------chest Hyper
-    if typeOfEx != "Home" and numOfSet1 != 0:
+    if x != "Home" and numOfSet1 != 0:
         if resultOfChoices == "chest_Hypertrophy_Beginner":
             st.write("Main lifts")
             workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
