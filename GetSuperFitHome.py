@@ -144,7 +144,7 @@ user_name = "no"
 x = False
 y = "no"
 z = "no"
-
+typeOfEx = "no"
 x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 if x == "Home":
     with st.sidebar:
