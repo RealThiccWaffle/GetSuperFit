@@ -204,9 +204,10 @@ if selected == "My Data":
 with st.sidebar.form(key='newUser'):
     newUser = st.text_input("New User Login")
     st.form_submit_button("Create Account")
-if newUser < 1:
+    newUserCheck = userList.count(newUser)
+if newUserCheck < 1:
     userList.append(newUser)
-if newUser > 0:
+if newUserCheck > 0:
     st.text("Sorry username taken")
 ####################################################################
 if typeOfEx == "Home Page":
