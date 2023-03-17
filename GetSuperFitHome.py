@@ -294,7 +294,7 @@ if typeOfEx != "My Data":
             resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
         
             #-------------------------------------------------chest Hyper
-    if x != "Home":
+    if x != "Home" and x != "Admin Control":
         if typeOfEx != "Training Guide":
             if resultOfChoices == "chest_Hypertrophy_Beginner":
                 st.write("Main lifts")
