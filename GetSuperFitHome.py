@@ -198,15 +198,9 @@ if user_name == "Admin":
     if x == "Home":
         with st.sidebar:
             selected = option_menu(
-                menu_title= "HOME",
-                options= ["Admin","Home Page", "My Account", "My Data", "Settings", "About"]
+                menu_title= "AdMIN CONTROL",
+                options= ["Add Users","Add exercises", "Admin Settings"]
                     )
-    if x == "Workouts":
-        with st.sidebar:
-            selected = option_menu(
-                menu_title= "WORKOUTS",
-                options= ["Admin", "Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
-                )
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
