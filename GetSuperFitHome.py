@@ -198,7 +198,7 @@ if user_name == "Admin":
     if x == "Home":
         with st.sidebar:
             selected = option_menu(
-                menu_title= "AdMIN CONTROL",
+                menu_title= "ADMIN CONTROL",
                 options= ["Add Users","Add exercises", "Admin Settings"]
                     )
 ###############################################################################################################
