@@ -4,7 +4,9 @@ import pandas as pd
 from streamlit_extras.stateful_button import button
 import random
 import pandas as pd
-import Datalist.py as Datalist
+import Datalist
+
+
 #----------------workoutGenerator Function---------------------
 user_name = "none"
 def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
