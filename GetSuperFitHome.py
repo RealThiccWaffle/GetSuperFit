@@ -29,7 +29,7 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userListFun(userList)
+def userListFun(userList):
     userList = ["Admin", "Bob", "Jef"]
     return userList
 #--------------------List----------------------------
