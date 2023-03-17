@@ -435,10 +435,11 @@ if typeOfEx != "My Data":
                 workoutGenerator2(core_Endurance_Advanced, numOfSet1)
                 workoutGenerator2(core_Endurance_Advanced2, numOfSet2)
 #_____________________SIGNIN___________________________________
-varUser = False
-while varUser == False:
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
+if typeOfEx == "Home Page":
+    varUser = False
+    while varUser == False:
+        with st.sidebar.form(key='my_form'):
+            user_name = st.text_input("Usrename")
+            st.form_submit_button("Login")
+        if user_name != "no":
+            varUser = True
