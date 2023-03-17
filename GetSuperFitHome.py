@@ -248,24 +248,25 @@ if typeOfEx != "My Data":
             else:
                 st.write("description")
             return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
-        choice1 = "yes"
-        choice2 = "yes"
-        choice3 = "yes"
-        choice4 = "_"
-        HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
-        BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
-        numOfSet1 = 0
-        numOfSet2 = 0
-        if BegChoice == "yesBeginner":
-            numOfSet1 = 2
-            numOfSet2 = 2
-        if interChoice == "yesIntermediate":
-            numOfSet1 = 3
-            numOfSet2 = 3
-        if advChoice == "yesAdvanced":
-            numOfSet1 = 4
-            numOfSet2 = 4
-        resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
+        if typeOfEx != "Training Guide":
+            choice1 = "yes"
+            choice2 = "yes"
+            choice3 = "yes"
+            choice4 = "_"
+            HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
+            BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
+            numOfSet1 = 0
+            numOfSet2 = 0
+            if BegChoice == "yesBeginner":
+                numOfSet1 = 2
+                numOfSet2 = 2
+            if interChoice == "yesIntermediate":
+                numOfSet1 = 3
+                numOfSet2 = 3
+            if advChoice == "yesAdvanced":
+                numOfSet1 = 4
+                numOfSet2 = 4
+            resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
         
             #-------------------------------------------------chest Hyper
     if x != "Home" and numOfSet1 != 0:
