@@ -278,7 +278,7 @@ if typeOfEx != "My Data":
             #-------------------------------------------------chest Hyper
     if x != "Home":
         if typeOfEx != "Training Guide":
-            if x != "":
+            if x != "bobbbbbb":
                 if resultOfChoices == "chest_Hypertrophy_Beginner":
                     st.write("Main lifts")
                     workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
