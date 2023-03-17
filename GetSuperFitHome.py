@@ -149,13 +149,13 @@ x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 if x == "Home":
     with st.sidebar:
         selected = option_menu(
-            menu_title= "Menu Options",
+            menu_title= "HOME",
             options= ["Home Page", "My Account", "My Data", "Settings", "About"]
                 )
 if x == "Workouts":
     with st.sidebar:
         selected = option_menu(
-            menu_title= "Menu Options",
+            menu_title= "WORKOUTS",
             options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
             )
     typeOfEx = "Home"
