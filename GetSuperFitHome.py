@@ -160,28 +160,28 @@ if x == "Workouts":
             )
     typeOfEx = "Home"
     resultOfChoices = ""
-    if selected == "Home Page":
-        typeOfEx = "Home Page"
-        st.title("Welcome to the home page")
+if selected == "Home Page":
+    typeOfEx = "Home Page"
+    st.title("Welcome to the home page")
         
-    if selected == "Chest Day":
-        st.title("Lets build a chest workout")
-        typeOfEx = "chest"
-    if selected == "Back/Shoulder Day":
-        st.title("Lets build a back/shoulder workout")
-        typeOfEx = "back_shoulder"
-    if selected == "Leg Day":
-        st.title("Lets build a leg workout")
-        typeOfEx = "leg"
-    if selected == "Arm Day":
-        st.title("Lets build a arm workout")
-        typeOfEx = "arm"
-    if selected == "Core Day":
-        st.title("Lets build a core workout")
-        typeOfEx = "core"
-    if selected == "My Data":
-        st.title("Your personal Data")
-        typeOfEx = "My Data"
+if selected == "Chest Day":
+    st.title("Lets build a chest workout")
+    typeOfEx = "chest"
+if selected == "Back/Shoulder Day":
+    st.title("Lets build a back/shoulder workout")
+    typeOfEx = "back_shoulder"
+if selected == "Leg Day":
+    st.title("Lets build a leg workout")
+    typeOfEx = "leg"
+if selected == "Arm Day":
+    st.title("Lets build a arm workout")
+    typeOfEx = "arm"
+if selected == "Core Day":
+    st.title("Lets build a core workout")
+    typeOfEx = "core"
+if selected == "My Data":
+    st.title("Your personal Data")
+    typeOfEx = "My Data"
 varUser = False
 while varUser == False:
     
