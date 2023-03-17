@@ -146,6 +146,32 @@ y = "no"
 z = "no"
 typeOfEx = "no"
 x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
+varUser = False
+while varUser == False:
+    with st.sidebar.form(key='my_form'):
+        user_name = st.text_input("Usrename")
+        st.form_submit_button("Login")
+    if user_name != "no":
+        varUser = True
+if user_name == "Admin":
+    if x == "Home":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "ADMIN CONTROL",
+                options= ["Add Users","Add exercises", "Admin Settings"]
+                    )
+    if x == "Home":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "HOME",
+                options= ["Home Page", "My Account", "My Data", "Settings", "About"]
+                    )
+    if x == "Workouts":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "WORKOUTS",
+                options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
+                )
 if user_name != "Admin":
     if x == "Home":
         with st.sidebar:
@@ -187,20 +213,7 @@ if selected == "Core Day":
 if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
-varUser = False
-while varUser == False:
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
-if user_name == "Admin":
-    if x == "Home":
-        with st.sidebar:
-            selected = option_menu(
-                menu_title= "ADMIN CONTROL",
-                options= ["Add Users","Add exercises", "Admin Settings"]
-                    )
+
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
