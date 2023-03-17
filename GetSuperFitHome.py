@@ -168,6 +168,13 @@ if selected == "Training Guide":
 if selected == "Home Page":
     typeOfEx = "Home Page"
     st.title("Welcome to the home page")
+    varUser = False
+    while varUser == False:
+        with st.sidebar.form(key='my_form'):
+            user_name = st.text_input("Usrename")
+            st.form_submit_button("Login")
+        if user_name != "no":
+            varUser = True
         
 if selected == "Chest Day":
     st.title("Lets build a chest workout")
@@ -187,13 +194,7 @@ if selected == "Core Day":
 if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
-varUser = False
-while varUser == False:
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
+###############################################################################################################
 if typeOfEx == "Home Page":
     """
     #    WELCOME TO THE GET SUPER FIT APP
