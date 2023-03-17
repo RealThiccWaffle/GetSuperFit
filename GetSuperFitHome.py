@@ -29,6 +29,7 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
+userList = ["Admin", "Bob", "Jef"]
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -131,13 +132,14 @@ x = False
 y = "no"
 z = "no"
 typeOfEx = "no"
-varUser = False
-while varUser == False:
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
+#varUser = False
+#while varUser == False:
+with st.sidebar.form(key='my_form'):
+    user_name = st.text_input("Usrename")
+    st.form_submit_button("Login")
+    #if user_name != "no":
+        #varUser = True
+    
 if user_name != "Admin":
     x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 else:
