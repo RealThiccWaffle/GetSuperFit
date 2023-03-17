@@ -208,7 +208,7 @@ with st.sidebar.form(key='newUser'):
 if newUserCheck < 1:
     userList.append(newUser)
 if newUserCheck > 0:
-    st.sideBar.text("Sorry username taken")
+    st.sidebar.text("Sorry username taken")
 ####################################################################
 if typeOfEx == "Home Page":
     """
