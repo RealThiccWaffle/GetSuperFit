@@ -238,42 +238,42 @@ if typeOfEx != "My Data":
 
 
     #---------------2nd Parameter Function----------------
-                    def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
-                        xyt = st.selectbox("Please select your fitness level", ("None", "Beginner", "Intermediate", "Advanced"))
-                        if xyt == "Beginner":
-                            BegChoice = BegChoice + "Beginner"
-                            TypeOfChoice2 = TypeOfChoice2 + "Beginner"
-                            st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
-                        elif xyt == "Intermediate":
-                            InterChoice = InterChoice + "Intermediate"
-                            TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
-                            st.write("Intermediate is perfect if you need to up it from beginner!")
-                        elif xyt == "Advanced":
-                            AdvChoice = AdvChoice + "Advanced"
-                            TypeOfChoice2 = TypeOfChoice2 + "Advanced"
-                            st.write("Advanced is for those who want a good pump!")
-                        else:
-                            st.write("description")
-                        return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
-                    if typeOfEx != "Training Guide":
-                        choice1 = "yes"
-                        choice2 = "yes"
-                        choice3 = "yes"
-                        choice4 = "_"
-                        HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
-                        BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
-                        numOfSet1 = 0
-                        numOfSet2 = 0
-                        if BegChoice == "yesBeginner":
-                            numOfSet1 = 2
-                            numOfSet2 = 2
-                        if interChoice == "yesIntermediate":
-                            numOfSet1 = 3
-                            numOfSet2 = 3
-                        if advChoice == "yesAdvanced":
-                            numOfSet1 = 4
-                            numOfSet2 = 4
-                        resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
+                def exersizeChoice2(BegChoice, InterChoice, AdvChoice, TypeOfChoice2):
+                    xyt = st.selectbox("Please select your fitness level", ("None", "Beginner", "Intermediate", "Advanced"))
+                    if xyt == "Beginner":
+                        BegChoice = BegChoice + "Beginner"
+                        TypeOfChoice2 = TypeOfChoice2 + "Beginner"
+                        st.write("Beginner is a perfect fit if you starting or getting back to fitness!")
+                    elif xyt == "Intermediate":
+                        InterChoice = InterChoice + "Intermediate"
+                        TypeOfChoice2 = TypeOfChoice2 + "Intermediate"
+                        st.write("Intermediate is perfect if you need to up it from beginner!")
+                    elif xyt == "Advanced":
+                        AdvChoice = AdvChoice + "Advanced"
+                        TypeOfChoice2 = TypeOfChoice2 + "Advanced"
+                        st.write("Advanced is for those who want a good pump!")
+                    else:
+                        st.write("description")
+                    return BegChoice, InterChoice, AdvChoice, TypeOfChoice2
+                if typeOfEx != "Training Guide":
+                    choice1 = "yes"
+                    choice2 = "yes"
+                    choice3 = "yes"
+                    choice4 = "_"
+                    HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1 = exersizeChoice(choice1, choice2, choice3, choice4)
+                    BegChoice, interChoice, advChoice, TypeOfChoice2 = exersizeChoice2(choice1, choice2, choice3, choice4)
+                    numOfSet1 = 0
+                    numOfSet2 = 0
+                    if BegChoice == "yesBeginner":
+                        numOfSet1 = 2
+                        numOfSet2 = 2
+                    if interChoice == "yesIntermediate":
+                        numOfSet1 = 3
+                        numOfSet2 = 3
+                    if advChoice == "yesAdvanced":
+                        numOfSet1 = 4
+                        numOfSet2 = 4
+                    resultOfChoices = resultsOfButtons(typeOfEx, TypeOfChoice1, TypeOfChoice2, resultOfChoices)
         
             #-------------------------------------------------chest Hyper
     if x != "Home":
