@@ -5,6 +5,7 @@ from streamlit_extras.stateful_button import button
 import random
 import pandas as pd
 #----------------workoutGenerator Function---------------------
+user_name = "none"
 def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
     a = numOfset
     if a == 2:
@@ -145,18 +146,19 @@ y = "no"
 z = "no"
 typeOfEx = "no"
 x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
-if x == "Home":
-    with st.sidebar:
-        selected = option_menu(
-            menu_title= "HOME",
-            options= ["Home Page", "My Account", "My Data", "Settings", "About"]
+if user_name != "Admin":
+    if x == "Home":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "HOME",
+                options= ["Home Page", "My Account", "My Data", "Settings", "About"]
+                    )
+    if x == "Workouts":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "WORKOUTS",
+                options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
                 )
-if x == "Workouts":
-    with st.sidebar:
-        selected = option_menu(
-            menu_title= "WORKOUTS",
-            options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
-            )
     typeOfEx = "Home"
     resultOfChoices = ""
 if selected == "Training Guide":
@@ -192,6 +194,19 @@ while varUser == False:
         st.form_submit_button("Login")
     if user_name != "no":
         varUser = True
+if user_name == "Admin":
+    if x == "Home":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "HOME",
+                options= ["Home Page", "My Account", "My Data", "Settings", "About"]
+                    )
+    if x == "Workouts":
+        with st.sidebar:
+            selected = option_menu(
+                menu_title= "WORKOUTS",
+                options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
+                )
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
