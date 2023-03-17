@@ -206,7 +206,7 @@ with st.sidebar.form(key='newUser'):
     st.form_submit_button("Create Account")
     newUserCheck = userList.count(newUser)
 if newUserCheck == 0:
-    userList.append(newUser)
+    userList +=  [newUser]
 if newUserCheck > 0:
     st.sidebar.text("Sorry username taken")
 ####################################################################
