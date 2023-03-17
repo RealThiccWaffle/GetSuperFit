@@ -132,14 +132,10 @@ x = False
 y = "no"
 z = "no"
 typeOfEx = "no"
-#varUser = False
-#while varUser == False:
 with st.sidebar.form(key='my_form'):
     user_name = st.text_input("Usrename")
     st.form_submit_button("Login")
-    #if user_name != "no":
-        #varUser = True
-    
+
 if user_name != "Admin":
     x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 else:
@@ -204,7 +200,9 @@ if selected == "Core Day":
 if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
-
+with st.sidebar.form(key='newUser'):
+    user_name = st.text_input("New User Login")
+    st.form_submit_button("Create Account") 
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
