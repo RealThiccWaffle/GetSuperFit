@@ -29,15 +29,15 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userListFun(userList, newUser):
-    newUser = "Admin"
+def userListFun(userList, userNew):
+    userNew = "Admin"
     userList = ["Admin", "Bob", "Jef"]
-    newUserCheck = userList.count(newUser)
+    newUserCheck = userList.count(userNew)
     if newUserCheck > 0:
         st.sidebar.text_area("Sorry, this username is taken")
     if newUserCheck < 1:
-        userList.append(newUser)
-    return userList, newUser
+        userList.append(userNew)
+    return userList, userNew
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
