@@ -199,13 +199,13 @@ if user_name == "Admin":
         with st.sidebar:
             selected = option_menu(
                 menu_title= "HOME",
-                options= ["Home Page", "My Account", "My Data", "Settings", "About"]
+                options= ["Admin","Home Page", "My Account", "My Data", "Settings", "About"]
                     )
     if x == "Workouts":
         with st.sidebar:
             selected = option_menu(
                 menu_title= "WORKOUTS",
-                options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
+                options= ["Admin", "Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
                 )
 ###############################################################################################################
 if typeOfEx == "Home Page":
