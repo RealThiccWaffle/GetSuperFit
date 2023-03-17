@@ -146,9 +146,13 @@ y = "no"
 z = "no"
 with st.sidebar:
     selected = option_menu(
-        menu_title= "Main Menu",
-        options= st.selectbox("Menu Options", ["Home", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day", "My Data"])
-    )
+        menu_title= "Menu Options",
+        x = st.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
+        elif x == "Home":
+            options= ["My Account", "My Data", "Settings", "About App"]
+        elif x == "workouts":
+            options= ["Chest", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"]
+            )
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
