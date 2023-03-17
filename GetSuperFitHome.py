@@ -29,20 +29,6 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userLogin(user_login_True, userNam, userPass):
-            userNam = "no"
-            userPass = "no"
-            numX = ""
-            numY = ""
-            if userNam == "no":
-                userNam = st.sidebar.text_input("Username")
-                sta = st.sidebar.radio("", ('Login', 'Logout'), key = "Login")
-                if sta == "Login":
-                    uaser_login_True = True
-                if sta == "Logout":
-                    userNam = "You need to login"
-                    user_login_True = False
-            return user_login_True, userNam, userPass
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
