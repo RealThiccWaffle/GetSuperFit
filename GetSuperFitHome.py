@@ -4,14 +4,6 @@ import pandas as pd
 from streamlit_extras.stateful_button import button
 import random
 import pandas as pd
-#_____________________SIGNIN___________________________________
-varUser = False
-while varUser == False:
-    with st.sidebar.form(key='my_form'):
-        user_name = st.text_input("Usrename")
-        st.form_submit_button("Login")
-    if user_name != "no":
-        varUser = True
 #----------------workoutGenerator Function---------------------
 def workoutGenerator(ex1, ex2, ex3, ex4, workout_Type, numOfset):
     a = numOfset
@@ -442,3 +434,11 @@ if typeOfEx != "My Data":
             if resultOfChoices == "core_Endurance_Advanced":
                 workoutGenerator2(core_Endurance_Advanced, numOfSet1)
                 workoutGenerator2(core_Endurance_Advanced2, numOfSet2)
+#_____________________SIGNIN___________________________________
+varUser = False
+while varUser == False:
+    with st.sidebar.form(key='my_form'):
+        user_name = st.text_input("Usrename")
+        st.form_submit_button("Login")
+    if user_name != "no":
+        varUser = True
