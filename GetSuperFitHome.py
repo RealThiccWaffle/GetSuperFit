@@ -201,8 +201,13 @@ if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
 with st.sidebar.form(key='newUser'):
-    user_name = st.text_input("New User Login")
-    st.form_submit_button("Create Account") 
+    newUser = st.text_input("New User Login")
+    st.form_submit_button("Create Account")
+    newUserCheck = userList.count(newUser)
+    if newUserCheck > 0:
+        st.sidebar.text_area("Sorry, this username is taken")
+    if newUserCheck < 1:
+        userList.append(newUser)
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
