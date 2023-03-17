@@ -161,8 +161,7 @@ if x == "Workouts":
     typeOfEx = "Home"
     resultOfChoices = ""
 if selected == "Training Guide":
-    typeOfEx == "Training Guide"
-    a = "no"
+    typeOfEx = "Training Guide"
 if selected == "Home Page":
     typeOfEx = "Home Page"
     st.title("Welcome to the home page")
