@@ -29,9 +29,15 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userListFun(userList):
+def userListFun(userList, newUser):
+    newUser = "Admin"
     userList = ["Admin", "Bob", "Jef"]
-    return userList
+    newUserCheck = userList.count(newUser)
+    if newUserCheck > 0:
+        st.sidebar.text_area("Sorry, this username is taken")
+    if newUserCheck < 1:
+        userList.append(newUser)
+    return userList, newUser
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -207,12 +213,12 @@ with st.sidebar.form(key='newUser'):
     newUser = st.text_input("New User Login")
     st.form_submit_button("Create Account")
     userList = True
-    userList = userListFun(userList)
+    userList, newUser = userListFun(userList, newUser)
     newUserCheck = userList.count(newUser)
     if newUserCheck > 0:
         st.sidebar.text_area("Sorry, this username is taken")
     if newUserCheck < 1:
-        userListFun(userList).append(newUser)
+        
         st.text("it worked?")
 ###############################################################################################################
 if typeOfEx == "Home Page":
