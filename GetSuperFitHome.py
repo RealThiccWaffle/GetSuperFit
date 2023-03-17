@@ -144,10 +144,12 @@ user_name = "no"
 x = False
 y = "no"
 z = "no"
+def x():
+    x = st.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
 with st.sidebar:
     selected = option_menu(
         menu_title= "Menu Options",
-        x = st.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
+        options= x()
             )
     typeOfEx = "Home"
     resultOfChoices = ""
