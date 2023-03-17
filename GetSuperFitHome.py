@@ -152,9 +152,12 @@ while varUser == False:
         st.form_submit_button("Login")
     if user_name != "no":
         varUser = True
-x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
+if user_name != "Admin":
+    x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
+else:
+    x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts", "Admin Control"])
 if user_name == "Admin":
-    if x == "Home":
+    if x == "Admin Control":
         with st.sidebar:
             selected = option_menu(
                 menu_title= "ADMIN CONTROL",
