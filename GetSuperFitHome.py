@@ -192,7 +192,7 @@ while varUser == False:
         st.form_submit_button("Logout")
     if user_name != "no":
         varUser = True
-if typeOfEx == "Home":
+if x == "Home":
     """
     #    WELCOME TO THE GET SUPER FIT APP
     #  Use this app to help you get fit!
