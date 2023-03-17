@@ -235,23 +235,24 @@ if typeOfEx == "My Data":
 if typeOfEx != "My Data":
     if x != "Home":
         if typeOfEx != "Training Guide":
-            def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
-                tyz = st.selectbox("Please choose what kind of trying you want", ("None", "Hypertrophy", "Strength", "Endurance"))
-                if tyz == "Hypertrophy":
-                    HyperChoice = HyperChoice + " Hypertrophy"
-                    TypeOfChoice1 = TypeOfChoice1 + "Hypertrophy"
-                    st.write("Hypertrophy is if your goal is to gain muscle mass")
-                elif tyz == "Strength":
-                    StrenChoice = StrenChoice + "Strength"
-                    TypeOfChoice1 = TypeOfChoice1 + "Strength"
-                    st.write("Strength is for those you want to get stronger with current muscle mass they have")
-                elif tyz == "Endurance":
-                    EndurChoice = EndurChoice + "Endurance"
-                    TypeOfChoice1 = TypeOfChoice1 + "Endurance"
-                    st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps")
-                else:
-                    st.write("description")
-                return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
+            if x != "Admin Control":
+                def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
+                    tyz = st.selectbox("Please choose what kind of trying you want", ("None", "Hypertrophy", "Strength", "Endurance"))
+                    if tyz == "Hypertrophy":
+                        HyperChoice = HyperChoice + " Hypertrophy"
+                        TypeOfChoice1 = TypeOfChoice1 + "Hypertrophy"
+                        st.write("Hypertrophy is if your goal is to gain muscle mass")
+                    elif tyz == "Strength":
+                        StrenChoice = StrenChoice + "Strength"
+                        TypeOfChoice1 = TypeOfChoice1 + "Strength"
+                        st.write("Strength is for those you want to get stronger with current muscle mass they have")
+                    elif tyz == "Endurance":
+                        EndurChoice = EndurChoice + "Endurance"
+                        TypeOfChoice1 = TypeOfChoice1 + "Endurance"
+                        st.write("Endurance is for those who want to be able to repeat a physical movement in large amount of reps")
+                    else:
+                        st.write("description")
+                    return HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1
 
 
     #---------------2nd Parameter Function----------------
