@@ -145,7 +145,7 @@ x = False
 y = "no"
 z = "no"
 
-x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
+x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 if x == "Home":
     with st.sidebar:
         selected = option_menu(
