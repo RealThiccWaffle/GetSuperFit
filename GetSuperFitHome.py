@@ -145,7 +145,6 @@ x = False
 y = "no"
 z = "no"
 typeOfEx = "no"
-x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 varUser = False
 while varUser == False:
     with st.sidebar.form(key='my_form'):
@@ -153,6 +152,7 @@ while varUser == False:
         st.form_submit_button("Login")
     if user_name != "no":
         varUser = True
+x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts"])
 if user_name == "Admin":
     if x == "Home":
         with st.sidebar:
