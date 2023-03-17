@@ -162,6 +162,7 @@ if x == "Workouts":
     resultOfChoices = ""
 if selected == "Training Guide":
     typeOfEx == "Training Guide"
+    a = "no"
 if selected == "Home Page":
     typeOfEx = "Home Page"
     st.title("Welcome to the home page")
@@ -269,7 +270,7 @@ if typeOfEx != "My Data":
         
             #-------------------------------------------------chest Hyper
     if x != "Home" and numOfSet1 != 0:
-        if typeOfEx != "Training Guide":
+        if a != "no":
             if resultOfChoices == "chest_Hypertrophy_Beginner":
                 st.write("Main lifts")
                 workoutGenerator2(chest_Hpypertrophy_Beginner, numOfSet1)
