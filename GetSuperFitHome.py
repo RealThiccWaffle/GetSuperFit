@@ -202,6 +202,7 @@ if selected == "Core Day":
 if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
+
 with st.sidebar.form(key='newUser'):
     newUser = st.text_input("New User Login")
     st.form_submit_button("Create Account")
