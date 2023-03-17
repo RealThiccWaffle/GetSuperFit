@@ -207,7 +207,7 @@ if typeOfEx == "My Data":
     #if user_name != "no":
     st.write("Hello "+user_name) 
 if typeOfEx != "My Data":
-    if typeOfEx != "Home":
+    if x != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
             tyz = st.selectbox("Please choose what kind of trying you want", ("None", "Hypertrophy", "Strength", "Endurance"))
             if tyz == "Hypertrophy":
