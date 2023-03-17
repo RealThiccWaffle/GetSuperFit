@@ -144,13 +144,19 @@ user_name = "no"
 x = False
 y = "no"
 z = "no"
-def x():
-    x = st.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
-with st.sidebar:
-    selected = option_menu(
-        menu_title= "Menu Options",
-        options= x()
-            )
+
+x = st.sidebar.selectbox("Navigation Tool", ["Home", "Workouts", "Back/Shoulder", "Leg Day", "Arm Day", "Core Day", "My Data"])
+if x == "Home":
+    with st.sidebar:
+        selected = option_menu(
+            menu_title= "Menu Options",
+            options= ["My Account", "My Data", "Settings", "About"]
+                )
+if x == "Workouts":
+    with st.sidebar:
+        selected = option_menu(
+            menu_title= "Menu Options",
+            options= ["Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
