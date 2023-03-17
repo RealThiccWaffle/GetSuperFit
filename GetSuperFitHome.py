@@ -30,7 +30,6 @@ def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
 def userListFun(userList, userNew):
-    userNew = "Admin"
     userList = ["Admin", "Bob", "Jef"]
     newUserCheck = userList.count(userNew)
     if newUserCheck > 0:
@@ -215,10 +214,6 @@ with st.sidebar.form(key='newUser'):
     userList = True
     userList, newUser = userListFun(userList, newUser)
     newUserCheck = userList.count(newUser)
-    if newUserCheck > 0:
-        st.sidebar.text("Sorry, this username is taken")
-    if newUserCheck < 1:
-        st.text("it worked?")
 ###############################################################################################################
 if typeOfEx == "Home Page":
     """
