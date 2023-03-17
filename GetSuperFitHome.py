@@ -212,7 +212,7 @@ with st.sidebar.form(key='newUser'):
     if newUserCheck > 0:
         st.sidebar.text_area("Sorry, this username is taken")
     if newUserCheck < 1:
-        userListFun(userList.append(newUser))
+        userListFun(userList).append(newUser)
         st.text("it worked?")
 ###############################################################################################################
 if typeOfEx == "Home Page":
