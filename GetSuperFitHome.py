@@ -189,12 +189,9 @@ if selected == "My Data":
     typeOfEx = "My Data"
 varUser = False
 while varUser == False:
-    
     with st.sidebar.form(key='my_form'):
         user_name = st.text_input("Usrename")
-        user_password = st.text_input("Password")
         st.form_submit_button("Login")
-        st.form_submit_button("Logout")
     if user_name != "no":
         varUser = True
 if typeOfEx == "Home Page":
