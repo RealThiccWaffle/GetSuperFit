@@ -150,7 +150,7 @@ if x == "Home":
     with st.sidebar:
         selected = option_menu(
             menu_title= "Menu Options",
-            options= ["My Account", "My Data", "Settings", "About"]
+            options= ["Home Page", "My Account", "My Data", "Settings", "About"]
                 )
 if x == "Workouts":
     with st.sidebar:
@@ -160,8 +160,8 @@ if x == "Workouts":
             )
     typeOfEx = "Home"
     resultOfChoices = ""
-    if selected == "Home":
-        typeOfEx = "Home"
+    if selected == "Home Page":
+        typeOfEx = "Home Page"
         st.title("Welcome to the home page")
         
     if selected == "Chest Day":
@@ -192,7 +192,7 @@ while varUser == False:
         st.form_submit_button("Logout")
     if user_name != "no":
         varUser = True
-if x == "Home":
+if typeOfEx == "Home Page":
     """
     #    WELCOME TO THE GET SUPER FIT APP
     #  Use this app to help you get fit!
