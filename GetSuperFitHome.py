@@ -4,7 +4,7 @@ import pandas as pd
 from streamlit_extras.stateful_button import button
 import random
 import pandas as pd
-from Datalist import userList
+import Datalist
 
 
 #----------------workoutGenerator Function---------------------
@@ -29,10 +29,6 @@ def workoutGenerator2(finalResults, NumOfset3):
             st.write(num3)
             st.write(num4)
             wwwwwwwwwwwww = 1
-
-#def resultsOfButtons(type1, type2, type3, type4):
-            #type4 = type1 + type2 + type3
-            #return type4
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -203,16 +199,6 @@ if selected == "Core Day":
 if selected == "My Data":
     st.title("Your personal Data")
     typeOfEx = "My Data"
-
-with st.sidebar.form(key='newUser'):
-    newUser = st.text_input("New User Login")
-    st.form_submit_button("Create Account")
-Datalist(newUser)
-newUserCheck = Datalist().count(newUser)
-if newUserCheck == 0:
-    Datalist.userList.append(newUser)
-if newUserCheck > 0:
-    st.sidebar.text("Sorry username taken")
 ####################################################################
 if typeOfEx == "Home Page":
     """
