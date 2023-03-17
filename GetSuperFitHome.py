@@ -34,7 +34,7 @@ def userListFun(userList, userNew):
     userList = ["Admin", "Bob", "Jef"]
     newUserCheck = userList.count(userNew)
     if newUserCheck > 0:
-        st.sidebar.text_area("Sorry, this username is taken")
+        st.sidebar.text("Sorry, this username is taken")
     if newUserCheck < 1:
         userList.append(userNew)
     return userList, userNew
@@ -216,9 +216,8 @@ with st.sidebar.form(key='newUser'):
     userList, newUser = userListFun(userList, newUser)
     newUserCheck = userList.count(newUser)
     if newUserCheck > 0:
-        st.sidebar.text_area("Sorry, this username is taken")
+        st.sidebar.text("Sorry, this username is taken")
     if newUserCheck < 1:
-        
         st.text("it worked?")
 ###############################################################################################################
 if typeOfEx == "Home Page":
