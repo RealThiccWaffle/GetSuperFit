@@ -156,10 +156,12 @@ if x == "Workouts":
     with st.sidebar:
         selected = option_menu(
             menu_title= "Menu Options",
-            options= ["Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
+            options= ["Training Guide", "Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
             )
     typeOfEx = "Home"
     resultOfChoices = ""
+if selected == "Training Guide":
+    typeOfEx == "Training Guide"
 if selected == "Home Page":
     typeOfEx = "Home Page"
     st.title("Welcome to the home page")
@@ -206,7 +208,7 @@ if typeOfEx == "Home Page":
 if typeOfEx == "My Data":
     #if user_name != "no":
     st.write("Hello "+user_name) 
-if typeOfEx != "My Data":
+if typeOfEx != "My Data" or typeOfEx != "Training Guide":
     if x != "Home":
         def exersizeChoice(HyperChoice, StrenChoice, EndurChoice, TypeOfChoice1):
             tyz = st.selectbox("Please choose what kind of trying you want", ("None", "Hypertrophy", "Strength", "Endurance"))
