@@ -157,6 +157,7 @@ if x == "Workouts":
         selected = option_menu(
             menu_title= "Menu Options",
             options= ["Chest Day", "Back/Shoulder Day", "Leg Day", "Arm Day", "Core Day"]
+            )
     typeOfEx = "Home"
     resultOfChoices = ""
     if selected == "Home":
