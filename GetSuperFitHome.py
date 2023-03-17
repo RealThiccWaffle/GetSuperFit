@@ -29,14 +29,7 @@ def workoutGenerator2(finalResults, NumOfset3):
 def resultsOfButtons(type1, type2, type3, type4):
             type4 = type1 + type2 + type3
             return type4
-def userListFun(userList, userNew):
-    userList = ["Admin", "Bob", "Jef"]
-    newUserCheck = userList.count(userNew)
-    if newUserCheck > 0:
-        st.sidebar.text("Sorry, this username is taken")
-    if newUserCheck < 1:
-        userList.append(userNew)
-    return userList, userNew
+userList = ["Admin", "Bob", "Jef"]
 #--------------------List----------------------------
 #$$$$$$$$$$$$$$$$$$$$CHEST$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 chest_Hpypertrophy_Beginner = ["a1", "b2", "c3", "d4","a5", "b6", "c7", "d8"]
@@ -211,10 +204,11 @@ if selected == "My Data":
 with st.sidebar.form(key='newUser'):
     newUser = st.text_input("New User Login")
     st.form_submit_button("Create Account")
-    userList = True
-    userList, newUser = userListFun(userList, newUser)
-    newUserCheck = userList.count(newUser)
-###############################################################################################################
+if newUser < 1:
+    userList.append(newUser)
+if newUser > 0:
+    st.text("Sorry username taken")
+####################################################################
 if typeOfEx == "Home Page":
     """
     #    WELCOME TO THE GET SUPER FIT APP
