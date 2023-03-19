@@ -95,30 +95,62 @@ if st.button("Generate Workout", key="generate_workout"):
 # Main workout generator code
 # ... (rest of the workout generator code)
 
+import streamlit as st
+import random
+import time
+
+# ... (rest of the code remains the same)
+
+# Main workout generator code
+# ... (rest of the workout generator code)
+
 BEEP_SOUND_SCRIPT = '''
 <script>
-function playBeep() {
-    var context = new (window.AudioContext || window.webkitAudioContext)();
-    var oscillator = context.createOscillator();
-    oscillator.type = "sine";
+async function playBeep() {
+    const context = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = context.createOscillator();
+    const gainNode = context.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(context.destination);
+
+    oscillator.type = 'sine';
     oscillator.frequency.value = 440;
-    oscillator.connect(context.destination);
-    oscillator.start();
-    setTimeout(function() {
-        oscillator.stop();
-    }, 500);
+    gainNode.gain.setValueAtTime(1, context.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.5);
+
+    oscillator.start(context.currentTime);
+    oscillator.stop(context.currentTime + 0.5);
+}
+
+function updateTimer() {
+    window.timerId = setInterval(function() {
+        let timeRemaining = parseInt(document.getElementById('timeRemaining').innerText);
+        if (timeRemaining > 0) {
+            document.getElementById('timeRemaining').innerText = timeRemaining - 1;
+        } else {
+            clearInterval(window.timerId);
+            playBeep();
+        }
+    }, 1000);
 }
 </script>
 '''
 
 st.markdown(BEEP_SOUND_SCRIPT, unsafe_allow_html=True)
 
+progress_bar = st.empty()
+time_remaining = st.empty()
+
 if st.button("Start 60s Timer"):
+    st.markdown('<span id="timeRemaining" style="display:none;">60</span>', unsafe_allow_html=True)
+    st.markdown("<script>updateTimer();</script>", unsafe_allow_html=True)
     for i in range(60, 0, -1):
-        st.write(f"Time remaining: {i}s")
+        progress_bar.progress((60 - i) / 60)
+        time_remaining.text(f"Time remaining: {i}s")
         time.sleep(1)
-    st.write("Time's up!")
-    st.markdown("<script>playBeep();</script>", unsafe_allow_html=True)
+    time_remaining.text("Time's up!")
+
 
 # ... (rest of the code remains the same)
 
