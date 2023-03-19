@@ -104,3 +104,29 @@ if st.button("Generate Workout", key="generate_workout"):
                     time_remaining -= 1
                     st.write("")  # Clear the line with the previous remaining time
                 st.write("Next set/exercise")
+# ... (rest of the code remains the same)
+
+st.sidebar.title("Hypertrophy Training Tips")
+
+st.sidebar.header("Reps and Intensity")
+st.sidebar.write("""
+- Use a weight that is around 65-85% of your 1RM for each exercise.
+- Perform reps at a controlled pace, e.g., 2 seconds for lifting, 1 second pause, 2 seconds for lowering.
+- Train close to failure, but not necessarily to absolute failure on each set.
+""")
+
+st.sidebar.header("Diet")
+st.sidebar.write("""
+- Consume a calorie surplus to support muscle growth.
+- Aim for 1.6-2.2 grams of protein per kilogram of body weight daily.
+- Maintain a balanced intake of carbohydrates, fats, and micronutrients.
+""")
+
+st.sidebar.header("Split Training")
+st.sidebar.write("""
+- Split training allows you to focus on specific muscle groups in each session.
+- Common split routines include upper/lower, push/pull/legs, and body part-specific splits.
+- Ensure adequate rest and recovery between sessions targeting the same muscle group.
+""")
+
+# ... (rest of the code remains the same)
