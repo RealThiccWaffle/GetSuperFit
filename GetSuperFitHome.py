@@ -94,33 +94,11 @@ if st.button("Generate Workout", key="generate_workout"):
 
 # Main workout generator code
 # ... (rest of the workout generator code)
-
-import streamlit as st
-import random
-import time
-
-# ... (rest of the code remains the same)
-
-# Main workout generator code
-# ... (rest of the workout generator code)
-
 BEEP_SOUND_SCRIPT = '''
 <script>
 async function playBeep() {
-    const context = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = context.createOscillator();
-    const gainNode = context.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(context.destination);
-
-    oscillator.type = 'sine';
-    oscillator.frequency.value = 440;
-    gainNode.gain.setValueAtTime(1, context.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.5);
-
-    oscillator.start(context.currentTime);
-    oscillator.stop(context.currentTime + 0.5);
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease("C5", "8n");
 }
 
 function updateTimer() {
@@ -150,6 +128,7 @@ if st.button("Start 60s Timer"):
         time_remaining.text(f"Time remaining: {i}s")
         time.sleep(1)
     time_remaining.text("Time's up!")
+
 
 
 # ... (rest of the code remains the same)
