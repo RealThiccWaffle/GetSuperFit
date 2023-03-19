@@ -109,7 +109,7 @@ if st.button("Generate Workout", key="generate_workout"):
 
 
 st.sidebar.title("Additional Information")
-page = st.sidebar.selectbox("Choose a topic:", ["None", "Hypertrophy Training Tips", "Supplements for Hypertrophy", "How to Use the App"])
+page = st.sidebar.selectbox("Choose a topic:", ["None", "Hypertrophy Training Tips", "Supplements", "How to Use the App"])
 
 if page == "Hypertrophy Training Tips":
     st.sidebar.header("Hypertrophy Training Tips")
@@ -133,7 +133,7 @@ if page == "Hypertrophy Training Tips":
     - Common split routines include upper/lower, push/pull/legs, and body part-specific splits.
     - Ensure adequate rest and recovery between sessions targeting the same muscle group.
     """)
-elif page == "Supplements for Hypertrophy":
+elif page == "Supplements":
     st.sidebar.header("Supplements for Hypertrophy")
     st.sidebar.write("""
     Here are some supplements that may help support muscle growth and hypertrophy:
