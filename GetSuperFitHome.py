@@ -106,39 +106,34 @@ if st.button("Generate Workout", key="generate_workout"):
                 st.write("Next set/exercise")
 # ... (rest of the code remains the same)
 
-st.sidebar.title("Hypertrophy Training Tips")
 
-st.sidebar.header("Reps and Intensity")
-st.sidebar.write("""
-- Use a weight that is around 65-85% of your 1RM for each exercise.
-- Perform reps at a controlled pace, e.g., 2 seconds for lifting, 1 second pause, 2 seconds for lowering.
-- Train close to failure, but not necessarily to absolute failure on each set.
-""")
-
-st.sidebar.header("Diet")
-st.sidebar.write("""
-- Consume a calorie surplus to support muscle growth.
-- Aim for 1.6-2.2 grams of protein per kilogram of body weight daily.
-- Maintain a balanced intake of carbohydrates, fats, and micronutrients.
-""")
-
-st.sidebar.header("Split Training")
-st.sidebar.write("""
-- Split training allows you to focus on specific muscle groups in each session.
-- Common split routines include upper/lower, push/pull/legs, and body part-specific splits.
-- Ensure adequate rest and recovery between sessions targeting the same muscle group.
-""")
-
-# ... (rest of the code remains the same)
-# ... (rest of the code remains the same)
-
-# Main workout generator code
-# ... (rest of the workout generator code)
 
 st.sidebar.title("Additional Information")
-page = st.sidebar.selectbox("Choose a topic:", ["None", "Supplements for Hypertrophy", "How to Use the App"])
+page = st.sidebar.selectbox("Choose a topic:", ["None", "Hypertrophy Training Tips", "Supplements for Hypertrophy", "How to Use the App"])
 
-if page == "Supplements for Hypertrophy":
+if page == "Hypertrophy Training Tips":
+    st.sidebar.header("Hypertrophy Training Tips")
+    st.sidebar.subheader("Reps and Intensity")
+    st.sidebar.write("""
+    - Use a weight that is around 65-85% of your 1RM for each exercise.
+    - Perform reps at a controlled pace, e.g., 2 seconds for lifting, 1 second pause, 2 seconds for lowering.
+    - Train close to failure, but not necessarily to absolute failure on each set.
+    """)
+
+    st.sidebar.subheader("Diet")
+    st.sidebar.write("""
+    - Consume a calorie surplus to support muscle growth.
+    - Aim for 1.6-2.2 grams of protein per kilogram of body weight daily.
+    - Maintain a balanced intake of carbohydrates, fats, and micronutrients.
+    """)
+
+    st.sidebar.subheader("Split Training")
+    st.sidebar.write("""
+    - Split training allows you to focus on specific muscle groups in each session.
+    - Common split routines include upper/lower, push/pull/legs, and body part-specific splits.
+    - Ensure adequate rest and recovery between sessions targeting the same muscle group.
+    """)
+elif page == "Supplements for Hypertrophy":
     st.sidebar.header("Supplements for Hypertrophy")
     st.sidebar.write("""
     Here are some supplements that may help support muscle growth and hypertrophy:
@@ -149,7 +144,6 @@ if page == "Supplements for Hypertrophy":
     4. **Branched-Chain Amino Acids (BCAAs)**: May help reduce muscle breakdown and promote recovery.
     5. **Fish oil**: Rich in omega-3 fatty acids, which can support muscle growth and overall health.
     """)
-
 elif page == "How to Use the App":
     st.sidebar.header("How to Use the App")
     st.sidebar.write("""
