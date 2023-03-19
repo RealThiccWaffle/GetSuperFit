@@ -90,20 +90,36 @@ if st.button("Generate Workout", key="generate_workout"):
     for exercise, sets, reps in workout:
         st.write(f"{exercise}: {sets} sets x {reps} reps")
 
-    rest_time = st.slider("Choose your rest time between sets (in seconds):", 30, 180, 60)
+# ... (rest of the code remains the same)
 
-    if st.button("Start Workout Timer", key="start_workout_timer"):
-        for exercise, sets, reps in workout:
-            for current_set in range(1, sets + 1):
-                st.write(f"Performing {exercise} - Set {current_set} of {sets}: {reps} reps")
-                st.write(f"Rest for {rest_time} seconds.")
-                time_remaining = rest_time
-                while time_remaining > 0:
-                    st.write(f"{time_remaining} seconds remaining.")
-                    time.sleep(1)
-                    time_remaining -= 1
-                    st.write("")  # Clear the line with the previous remaining time
-                st.write("Next set/exercise")
+# Main workout generator code
+# ... (rest of the workout generator code)
+
+BEEP_SOUND_SCRIPT = '''
+<script>
+function playBeep() {
+    var context = new (window.AudioContext || window.webkitAudioContext)();
+    var oscillator = context.createOscillator();
+    oscillator.type = "sine";
+    oscillator.frequency.value = 440;
+    oscillator.connect(context.destination);
+    oscillator.start();
+    setTimeout(function() {
+        oscillator.stop();
+    }, 500);
+}
+</script>
+'''
+
+st.markdown(BEEP_SOUND_SCRIPT, unsafe_allow_html=True)
+
+if st.button("Start 60s Timer"):
+    for i in range(60, 0, -1):
+        st.write(f"Time remaining: {i}s")
+        time.sleep(1)
+    st.write("Time's up!")
+    st.markdown("<script>playBeep();</script>", unsafe_allow_html=True)
+
 # ... (rest of the code remains the same)
 
 
