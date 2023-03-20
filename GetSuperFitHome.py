@@ -52,7 +52,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Beep sound script
 BEEP_SOUND_SCRIPT = '''
 <script>
     function playBeep() {
@@ -62,20 +61,31 @@ BEEP_SOUND_SCRIPT = '''
 </script>
 '''
 
+# Timer script
+TIMER_SCRIPT = '''
+<script>
+    function updateTimer() {
+        let timeRemaining = document.getElementById("timeRemaining");
+        let timeValue = parseInt(timeRemaining.innerText);
+        if (timeValue > 0) {
+            timeRemaining.innerText = timeValue - 1;
+            setTimeout(updateTimer, 1000);
+        } else {
+            playBeep();
+        }
+    }
+</script>
+'''
+
 st.markdown(BEEP_SOUND_SCRIPT, unsafe_allow_html=True)
+st.markdown(TIMER_SCRIPT, unsafe_allow_html=True)
 
 progress_bar = st.empty()
 time_remaining = st.empty()
 
 if st.button("Start 60s Timer"):
     st.markdown('<span id="timeRemaining" style="display:none;">60</span>', unsafe_allow_html=True)
-    st.markdown("<script>updateTimer();</script>", unsafe_allow_html=True)
-    for i in range(60, 0, -1):
-        progress_bar.progress((60 - i) / 60)
-        time_remaining.text(f"Time remaining: {i}s")
-        time.sleep(1)
-    time_remaining.text("Time's up!")
-    st.markdown("<script>playBeep();</script>", unsafe_allow_html=True)
+    st.markdown("<script>updateTimer();</script>", unsafe_allow_html=True))
 
 if st.button("Generate Workout"):
     st.header("Generated Workout")
