@@ -4,11 +4,77 @@ import time
 
 def generate_workout(training_type, target_muscle, fitness_level, add_extras):
     workouts = {
-        # ... (workout dictionary contents)
+        "split": {
+            "chest": {
+                "beginner": [
+                    ("Bench Press", 3, 10),
+                    ("Incline Dumbbell Press", 3, 10),
+                    ("Chest Fly", 3, 10),
+                ],
+                "intermediate": [
+                    ("Bench Press", 4, 8),
+                    ("Incline Dumbbell Press", 4, 8),
+                    ("Chest Fly", 4, 8),
+                ],
+                "advanced": [
+                    ("Bench Press", 5, 6),
+                    ("Incline Dumbbell Press", 5, 6),
+                    ("Chest Fly", 5, 6),
+                ],
+            },
+            "back": {
+                "beginner": [
+                    ("Deadlift", 3, 10),
+                    ("Bent Over Row", 3, 10),
+                    ("Lat Pulldown", 3, 10),
+                ],
+                "intermediate": [
+                    ("Deadlift", 4, 8),
+                    ("Bent Over Row", 4, 8),
+                    ("Lat Pulldown", 4, 8),
+                ],
+                "advanced": [
+                    ("Deadlift", 5, 6),
+                    ("Bent Over Row", 5, 6),
+                    ("Lat Pulldown", 5, 6),
+                ],
+            },
+            # Add other muscle groups here in a similar format
+        },
+        "full_body": {
+            "all": {
+                "beginner": [
+                    ("Bench Press", 3, 10),
+                    ("Deadlift", 3, 10),
+                    ("Squat", 3, 10),
+                ],
+                "intermediate": [
+                    ("Bench Press", 4, 8),
+                    ("Deadlift", 4, 8),
+                    ("Squat", 4, 8),
+                ],
+                "advanced": [
+                    ("Bench Press", 5, 6),
+                    ("Deadlift", 5, 6),
+                    ("Squat", 5, 6),
+                ],
+            }
+        }
     }
 
     extra_workouts = {
-        # ... (extra workouts dictionary contents)
+        "triceps": [
+            ("Triceps Dips", 3, 10),
+            ("Skull Crushers", 3, 10),
+        ],
+        "biceps": [
+            ("Bicep Curls", 3, 10),
+            ("Hammer Curls", 3, 10),
+        ],
+        "core": [
+            ("Plank", 3, "60s"),
+            ("Crunches", 3, 15),
+        ],
     }
 
     if training_type == "full_body":
@@ -27,18 +93,11 @@ st.title("Hypertrophy Workout Generator")
 
 training_type = st.selectbox("Choose a training type:", ["split", "full_body"])
 if training_type == "split":
-    target_muscle = st.selectbox("Choose a target muscle:", ["chest", "back", "quads", "hamstrings", "biceps", "triceps", "shoulders", "calves"])
+    target_muscle = st.selectbox("Choose a target muscle:", ["chest", "back"])
 else:
     target_muscle = "all"
 fitness_level = st.selectbox("Choose your fitness level:", ["beginner", "intermediate", "advanced"])
 add_extras = st.selectbox("Add extra exercises (optional):", ["None", "triceps", "biceps", "core"])
-
-# ... (rest of the code remains the same)
-
-# ... (rest of the code remains the same)
-
-# Main workout generator code
-# ... (rest of the workout generator code)
 
 # Add Tone.js library
 st.markdown(
@@ -48,7 +107,25 @@ st.markdown(
 
 # Beep sound script
 BEEP_SOUND_SCRIPT = '''
-# ... (Beep sound script)
+<script>
+    const synth = new Tone.Synth().toDestination();
+
+    function playBeep() {
+        synth.triggerAttackRelease("C4", "8n");
+    }
+
+    function updateTimer() {
+        const timeRemainingElement = document.getElementById("timeRemaining");
+        const timeRemaining = parseInt(timeRemainingElement.innerText, 10);
+        if (timeRemaining > 0) {
+            timeRemainingElement.innerText = (timeRemaining - 1).toString();
+            setTimeout(updateTimer, 1000);
+            if (timeRemaining === 1) {
+                playBeep();
+            }
+        }
+    }
+</script>
 '''
 
 st.markdown(BEEP_SOUND_SCRIPT, unsafe_allow_html=True)
@@ -81,39 +158,34 @@ if page == "Hypertrophy Training Tips":
     st.sidebar.header("Hypertrophy Training Tips")
     st.sidebar.subheader("Reps and Intensity")
     st.sidebar.write("""
-    # ... (Hypertrophy Training Tips content)
+    To promote hypertrophy, aim for a rep range of 8-12 repetitions per set. This range has been shown to be effective for muscle growth. Adjust the weight used so that you can complete the given number of reps with good form while still challenging your muscles.
     """)
 
     st.sidebar.subheader("Diet")
     st.sidebar.write("""
-    # ... (Diet content)
+    To support muscle growth, ensure that you're consuming enough protein and overall calories. A general guideline is to consume about 1g of protein per pound of body weight daily. Additionally, eat a mix of carbohydrates and healthy fats to fuel your workouts and recovery.
     """)
 
     st.sidebar.subheader("Split Training")
     st.sidebar.write("""
-    # ... (Split Training content)
-    """)
-elif page == "Hypertrophy Training Tips":
-    st.title("Hypertrophy Training Tips")
-    st.write("""
-    # ... (Hypertrophy Training Tips content)
+    Split training involves dividing your workouts to focus on specific muscle groups during each session. This allows you to train each muscle group with greater intensity and volume, which can help stimulate muscle growth. Common split routines include upper/lower, push/pull, and body part splits.
     """)
 
 elif page == "Supplements":
-    st.sidebar.header("Supplements")
+        st.sidebar.header("Supplements")
     st.sidebar.subheader("Protein Powder")
     st.sidebar.write("""
-    # ... (Protein Powder content)
+    Protein powder can be a convenient way to increase your daily protein intake, especially if you struggle to get enough protein from whole foods. Common types of protein powder include whey, casein, and plant-based options like soy, pea, and rice protein.
     """)
 
     st.sidebar.subheader("Creatine")
     st.sidebar.write("""
-    # ... (Creatine content)
+    Creatine is a popular supplement that can help improve strength, power, and muscle mass. It works by increasing your muscles' stores of creatine phosphate, which is used to produce energy for high-intensity exercise. To supplement with creatine, start with a loading phase of 20g per day for 5-7 days, followed by a maintenance phase of 3-5g per day.
     """)
 
     st.sidebar.subheader("BCAAs")
     st.sidebar.write("""
-    # ... (BCAAs content)
+    Branched-chain amino acids (BCAAs) are a group of three essential amino acids: leucine, isoleucine, and valine. They can help promote muscle protein synthesis and reduce muscle breakdown during exercise. BCAAs can be taken before, during, or after your workout to support muscle recovery and growth.
     """)
 
 elif page == "How to Use the App":
@@ -128,4 +200,3 @@ elif page == "How to Use the App":
     7. Use the 60-second timer to time your rest periods between sets.
     8. Explore the sidebar for additional information on hypertrophy training tips, supplements, and how to use the app.
     """)
-
