@@ -85,7 +85,7 @@ time_remaining = st.empty()
 
 if st.button("Start 60s Timer"):
     st.markdown('<span id="timeRemaining" style="display:none;">60</span>', unsafe_allow_html=True)
-    st.markdown("<script>updateTimer();</script>", unsafe_allow_html=True))
+    st.markdown("<script>updateTimer();</script>", unsafe_allow_html=True)
 
 if st.button("Generate Workout"):
     st.header("Generated Workout")
