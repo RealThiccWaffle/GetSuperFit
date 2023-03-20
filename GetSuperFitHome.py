@@ -1,65 +1,31 @@
 import streamlit as st
-import random
+import pandas as pd
+import os
+from datetime import datetime
 
-# Define exercises for each muscle group
-exercises = {
-    'Chest': ['Bench Press', 'Dumbbell Fly', 'Incline Bench Press'],
-    'Back': ['Deadlift', 'Lat Pulldown', 'Barbell Row'],
-    'Legs': ['Squat', 'Lunges', 'Leg Press'],
-    'Shoulders': ['Military Press', 'Lateral Raise', 'Front Raise'],
-    'Arms': ['Bicep Curl', 'Tricep Extension', 'Hammer Curl'],
-    'Core': ['Plank', 'Crunches', 'Russian Twist']
-}
+# Set up the page
+st.set_page_config(page_title="Sushi pH Tracker", layout="wide")
+st.title("Sushi pH Tracker")
+DATA_FILE = "sushi_ph_data.csv"
 
-# Define rep and set schemes for strength and hypertrophy training
-strength_schemes = [
-    {'reps': 3, 'sets': 5},
-    {'reps': 5, 'sets': 5},
-    {'reps': 6, 'sets': 4},
-    {'reps': 8, 'sets': 3},
-    {'reps': 10, 'sets': 3}
-]
+# Check if the data file exists; if not, create one
+if not os.path.isfile(DATA_FILE):
+    data = pd.DataFrame(columns=["Date", "Time", "pH"])
+    data.to_csv(DATA_FILE, index=False)
 
-hypertrophy_schemes = [
-    {'reps': 12, 'sets': 4},
-    {'reps': 10, 'sets': 4},
-    {'reps': 8, 'sets': 4},
-    {'reps': 6, 'sets': 4},
-    {'reps': 12, 'sets': 3}
-]
+# Load existing data
+data = pd.read_csv(DATA_FILE)
+# Input fields
+date_input = st.date_input("Date", value=datetime.today())
+time_input = st.time_input("Time")
+ph_input = st.number_input("pH Level", min_value=0.0, max_value=14.0, step=0.01)
 
-# Define function to generate workout based on user input
-def generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core, training_type):
-    st.write(f'## Workout Plan for {muscle_group}')
-    st.write(f'### Fitness Level: {fitness_level}')
-    if add_arms:
-        exercises[muscle_group] += exercises['Arms']
-    if add_bicep:
-        exercises[muscle_group] += ['Bicep Curl']
-    if add_core:
-        exercises[muscle_group] += exercises['Core']
-    st.write('#### Exercises:')
-    for exercise in random.sample(exercises[muscle_group], k=3):
-        st.write(f'- {exercise}')
-        if training_type == 'Strength':
-            scheme = random.choice(strength_schemes)
-        else:
-            scheme = random.choice(hypertrophy_schemes)
-        st.write(f'   - Reps: {scheme["reps"]}')
-        st.write(f'   - Sets: {scheme["sets"]}')
-
-# Define Streamlit app
-def app():
-    st.set_page_config(page_title='Hypertrophy Workout Generator', page_icon=':muscle:', layout='wide')
-    st.title('Hypertrophy Workout Generator')
-    muscle_group = st.selectbox('Select Muscle Group', options=['Chest', 'Back', 'Legs', 'Shoulders'])
-    fitness_level = st.selectbox('Select Fitness Level', options=['Beginner', 'Intermediate', 'Advanced'])
-    add_arms = st.checkbox('Add Arms')
-    add_bicep = st.checkbox('Add Bicep')
-    add_core = st.checkbox('Add Core')
-    training_type = st.selectbox('Select Training Type', options=['Strength', 'Hypertrophy'])
-    st.write('\n')
-    generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core, training_type)
-
-if __name__ == '__main__':
-    app()
+# Submit button
+if st.button("Add pH Data"):
+    new_entry = pd.DataFrame({"Date": [date_input], "Time": [time_input], "pH": [ph_input]})
+    data = data.append(new_entry, ignore_index=True)
+    data.to_csv(DATA_FILE, index=False)
+    st.success("New pH data added!")
+# Display stored data
+st.header("Stored pH Data")
+st.write(data)
