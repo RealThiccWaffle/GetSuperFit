@@ -52,13 +52,12 @@ def generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core,
 def app():
     st.set_page_config(page_title='Hypertrophy Workout Generator', page_icon=':muscle:', layout='wide')
     st.title('Hypertrophy Workout Generator')
-    muscle_group = st.selectbox('Select Muscle Group', options=['Chest', 'Back', 'Legs', 'Shoulders'])
-    fitness_level = st.selectbox('Select Fitness Level', options=['Beginner', 'Intermediate', 'Advanced'])
+    muscle_group = st.selectbox('Select Muscle Group', ['Chest', 'Back', 'Legs', 'Shoulders'])
+    fitness_level = st.selectbox('Select Fitness Level', ['Beginner', 'Intermediate', 'Advanced'])
     add_arms = st.checkbox('Add Arms')
     add_bicep = st.checkbox('Add Bicep')
     add_core = st.checkbox('Add Core')
-    training_type = st.selectbox('Select Training Type', options=['Strength', 'Hypertrophy'])
-    st.write('\n')
+    training_type = st.selectbox('Select Training Type', ['Strength', 'Hypertrophy'])
     generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core, training_type)
 
 if __name__ == '__main__':
