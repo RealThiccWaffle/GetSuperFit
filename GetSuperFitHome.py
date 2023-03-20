@@ -84,16 +84,22 @@ add_extras = st.selectbox("Add extra exercises (optional):", ["None", "triceps",
 
 # ... (rest of the code remains the same)
 
-if st.button("Generate Workout", key="generate_workout"):
-    workout = generate_workout(training_type, target_muscle, fitness_level, add_extras)
-    st.write(f"Your {training_type} workout for {target_muscle} (Fitness Level: {fitness_level.capitalize()}):")
-    for exercise, sets, reps in workout:
-        st.write(f"{exercise}: {sets} sets x {reps} reps")
+import streamlit as st
+import random
+import time
 
 # ... (rest of the code remains the same)
 
 # Main workout generator code
 # ... (rest of the workout generator code)
+
+# Add Tone.js library
+st.markdown(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.26/Tone.js" integrity="sha512-OoyvPgCQx/0kNNF8iNtJwvSggSAsKA16mSfY2QlySt+D4ypx/JtI3qy8fdz4pSqss5r5yD3qFoX9DTygr13rDg==" crossorigin="anonymous"></script>',
+    unsafe_allow_html=True,
+)
+
+# Beep sound script
 BEEP_SOUND_SCRIPT = '''
 <script>
 async function playBeep() {
@@ -129,7 +135,10 @@ if st.button("Start 60s Timer"):
         time.sleep(1)
     time_remaining.text("Time's up!")
 
-
+# Move the workout display section below the timer section
+if st.button("Generate Workout"):
+    workout = generate_workout(training_type, muscle_group, fitness_level)
+    st.write('\n'.join(workout))
 
 # ... (rest of the code remains the same)
 
