@@ -1,90 +1,65 @@
 import streamlit as st
 import random
 
-# List of available exercises for each muscle group
-chest_exercises = ["Bench Press", "Incline Dumbbell Press", "Cable Flyes", "Dips"]
-back_exercises = ["Lat Pulldowns", "Deadlifts", "Seated Rows", "Pull-Ups"]
-leg_exercises = ["Squats", "Leg Press", "Lunges", "Deadlifts"]
-shoulder_exercises = ["Military Press", "Arnold Press", "Lateral Raises", "Front Raises"]
-bicep_exercises = ["Bicep Curls", "Hammer Curls", "Preacher Curls", "Incline Curls"]
-tricep_exercises = ["Tricep Extensions", "Dips", "Skull Crushers", "Close Grip Bench Press"]
-core_exercises = ["Plank", "Russian Twists", "Sit-Ups", "Hanging Leg Raises"]
+# Define exercises for each muscle group
+exercises = {
+    'Chest': ['Bench Press', 'Dumbbell Fly', 'Incline Bench Press'],
+    'Back': ['Deadlift', 'Lat Pulldown', 'Barbell Row'],
+    'Legs': ['Squat', 'Lunges', 'Leg Press'],
+    'Shoulders': ['Military Press', 'Lateral Raise', 'Front Raise'],
+    'Arms': ['Bicep Curl', 'Tricep Extension', 'Hammer Curl'],
+    'Core': ['Plank', 'Crunches', 'Russian Twist']
+}
 
-# Define the workout plan generation function
-def generate_workout(muscle_group, fitness_level, arms, bicep, core):
-    st.write(f"Here's your hypertrophy workout for {muscle_group}:")
-    st.write("")
+# Define rep and set schemes for strength and hypertrophy training
+strength_schemes = [
+    {'reps': 3, 'sets': 5},
+    {'reps': 5, 'sets': 5},
+    {'reps': 6, 'sets': 4},
+    {'reps': 8, 'sets': 3},
+    {'reps': 10, 'sets': 3}
+]
 
-    # Choose the number of sets and reps based on fitness level
-    if fitness_level == "Beginner":
-        sets = 3
-        reps = 12
-    elif fitness_level == "Intermediate":
-        sets = 4
-        reps = 10
-    else:
-        sets = 5
-        reps = 8
+hypertrophy_schemes = [
+    {'reps': 12, 'sets': 4},
+    {'reps': 10, 'sets': 4},
+    {'reps': 8, 'sets': 4},
+    {'reps': 6, 'sets': 4},
+    {'reps': 12, 'sets': 3}
+]
 
-    # Choose the main exercise for the muscle group
-    if muscle_group == "Chest":
-        main_exercise = random.choice(chest_exercises)
-    elif muscle_group == "Back":
-        main_exercise = random.choice(back_exercises)
-    elif muscle_group == "Legs":
-        main_exercise = random.choice(leg_exercises)
-    else:
-        main_exercise = random.choice(shoulder_exercises)
+# Define function to generate workout based on user input
+def generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core, training_type):
+    st.write(f'## Workout Plan for {muscle_group}')
+    st.write(f'### Fitness Level: {fitness_level}')
+    if add_arms:
+        exercises[muscle_group] += exercises['Arms']
+    if add_bicep:
+        exercises[muscle_group] += ['Bicep Curl']
+    if add_core:
+        exercises[muscle_group] += exercises['Core']
+    st.write('#### Exercises:')
+    for exercise in random.sample(exercises[muscle_group], k=3):
+        st.write(f'- {exercise}')
+        if training_type == 'Strength':
+            scheme = random.choice(strength_schemes)
+        else:
+            scheme = random.choice(hypertrophy_schemes)
+        st.write(f'   - Reps: {scheme["reps"]}')
+        st.write(f'   - Sets: {scheme["sets"]}')
 
-    st.write(f"Main Exercise: {main_exercise}")
-    st.write("")
-
-    # Choose additional exercises for the muscle group
-    other_exercises = []
-    for i in range(sets - 1):
-        exercise = random.choice(eval(muscle_group.lower() + "_exercises"))
-        while exercise == main_exercise or exercise in other_exercises:
-            exercise = random.choice(eval(muscle_group.lower() + "_exercises"))
-        other_exercises.append(exercise)
-
-    for i, exercise in enumerate(other_exercises):
-        st.write(f"Set {i+1}: {exercise} - {sets} sets x {reps} reps")
-        st.write("")
-
-    # Add arm exercises if requested
-    if arms:
-        if bicep:
-            bicep_exercise = random.choice(bicep_exercises)
-            st.write(f"Bicep Exercise: {bicep_exercise} - {sets} sets x {reps} reps")
-            st.write("")
-        tricep_exercise = random.choice(tricep_exercises)
-        st.write(f"Tricep Exercise: {tricep_exercise} - {sets} sets x {reps} reps")
-        st.write("")
-
-    # Add core exercises if requested
-    if core:
-        core_exercise = random.choice(core_exercises)
-        st.write(f"Core Exercise: {core_exercise} - {sets} sets x {reps} reps")
-        st.write("")
-
-# Define the Streamlit app
-# Define the Streamlit app
+# Define Streamlit app
 def app():
-    st.title("Hypertrophy Workout Generator")
+    st.set_page_config(page_title='Hypertrophy Workout Generator', page_icon=':muscle:', layout='wide')
+    st.title('Hypertrophy Workout Generator')
+    muscle_group = st.selectbox('Select Muscle Group', options=['Chest', 'Back', 'Legs', 'Shoulders'])
+    fitness_level = st.selectbox('Select Fitness Level', options=['Beginner', 'Intermediate', 'Advanced'])
+    add_arms = st.checkbox('Add Arms')
+    add_bicep = st.checkbox('Add Bicep')
+    add_core = st.checkbox('Add Core')
+    training_type = st.selectbox('Select Training Type', options=['Strength', 'Hypertrophy'])
+    st.write('\n')
+    generate_workout(muscle_group, fitness_level, add_arms, add_bicep, add_core, training_type)
 
-    # Get user inputs
-    muscle_group = st.selectbox("Select a muscle group:", ["Chest", "Back", "Legs", "Shoulders"])
-    fitness_level = st.selectbox("Select your fitness level:", ["Beginner", "Intermediate", "Advanced"])
-    arms = st.checkbox("Add arm exercises")
-    if arms:
-        bicep = st.checkbox("Add bicep exercises")
-    else:
-        bicep = False
-    core = st.checkbox("Add core exercises")
-
-    # Generate the workout plan
-    generate_workout(muscle_group, fitness_level, arms, bicep, core)
-
-# Run the Streamlit app
 if __name__ == '__main__':
     app()
