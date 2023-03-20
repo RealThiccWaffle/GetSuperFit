@@ -172,7 +172,7 @@ if page == "Hypertrophy Training Tips":
     """)
 
 elif page == "Supplements":
-        st.sidebar.header("Supplements")
+    st.sidebar.header("Supplements")
     st.sidebar.subheader("Protein Powder")
     st.sidebar.write("""
     Protein powder can be a convenient way to increase your daily protein intake, especially if you struggle to get enough protein from whole foods. Common types of protein powder include whey, casein, and plant-based options like soy, pea, and rice protein.
