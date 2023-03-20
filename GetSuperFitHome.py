@@ -35,10 +35,6 @@ add_extras = st.selectbox("Add extra exercises (optional):", ["None", "triceps",
 
 # ... (rest of the code remains the same)
 
-import streamlit as st
-import random
-import time
-
 # ... (rest of the code remains the same)
 
 # Main workout generator code
@@ -46,7 +42,8 @@ import time
 
 # Add Tone.js library
 st.markdown(
-    # ... (Tone.js library import)
+    '<script src="https://cdn.jsdelivr.net/npm/tone@14.8.30/build/Tone.min.js"></script>',
+    unsafe_allow_html=True,
 )
 
 # Beep sound script
