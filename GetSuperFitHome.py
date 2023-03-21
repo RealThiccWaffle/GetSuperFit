@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from datetime import datetime
+import time
 
 # Set up the page
 st.set_page_config(page_title="Sushi pH Tracker", layout="wide")
@@ -31,18 +31,20 @@ data = load_data()
 with st.form("ph_form"):
     st.header("Add pH Data")
     
-    date_input = st.date_input("Date", value=datetime.today())
-    time_input = st.time_input("Time")
+    # Current date and time
+    current_time = time.localtime()
+    current_date = time.strftime("%Y-%m-%d", current_time)
+    current_time_12hour = time.strftime("%I:%M %p", current_time)
 
-    # Format time in 12-hour format
-    time_12hour = time_input.strftime("%I:%M %p")
+    date_input = st.date_input("Date", value=pd.to_datetime(current_date))
+    time_input = st.text_input("Time", value=current_time_12hour)
 
     ph_input = st.number_input("pH Level", min_value=0.0, max_value=14.0, step=0.01)
 
     submit_button = st.form_submit_button("Submit")
 
 if submit_button:
-    add_ph_data(date_input, time_12hour, ph_input)
+    add_ph_data(date_input, time_input, ph_input)
     st.success("New pH data added!")
 
 # Display stored data
