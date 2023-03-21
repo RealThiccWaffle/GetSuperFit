@@ -8,7 +8,6 @@ st.title("Sushi pH Tracker")
 
 DATA_FILE = "sushi_ph_data.csv"
 
-@st.cache(allow_output_mutation=True)
 def load_data():
     try:
         data = pd.read_csv(DATA_FILE)
@@ -16,8 +15,6 @@ def load_data():
         data = pd.DataFrame(columns=["Date", "Time", "pH"])
         data.to_csv(DATA_FILE, index=False)
     return data
-
-data = load_data()
 
 # Input fields
 date_input = st.date_input("Date", value=datetime.today())
@@ -30,11 +27,14 @@ ph_input = st.number_input("pH Level", min_value=0.0, max_value=14.0, step=0.01)
 
 # Submit button
 if st.button("Add pH Data"):
+    data = load_data()
     new_entry = pd.DataFrame({"Date": [date_input], "Time": [time_12hour], "pH": [ph_input]})
     data = data.append(new_entry, ignore_index=True)
     data.to_csv(DATA_FILE, index=False)
     st.success("New pH data added!")
 
-# Display stored data
-st.header("Stored pH Data")
-st.write(data)
+# Load and display stored data
+if st.button("Load pH Data"):
+    data = load_data()
+    st.header("Stored pH Data")
+    st.write(data)
